@@ -1,3 +1,5 @@
+package org.cs4485.IndoorAirMonitorFramework
+
 import org.xmlpull.v1.XmlPullParser
 import android.util
 import java.io
@@ -18,9 +20,9 @@ import android.location.Location
 *       https://developer.android.com/training/basics/network-ops/xml
 */
 
-class WeatherXMLParser (private val apiKey: String,
-                        private val latitude: Float,
-                        private val longitude: Float) {
+public class WeatherXMLParser (private val apiKey: String,
+                               private val latitude: Float,
+                               private val longitude: Float) {
 
     init  {
         /*
@@ -39,7 +41,7 @@ class WeatherXMLParser (private val apiKey: String,
      */
 
     @Throws(XmlPullParserException::class, IOException::class)
-    fun parse(inputStream: InputStream): Temperature {
+    fun parse(inputStream: InputStream): Weather {
         inputStream.use { inputStream ->
             val parser: XmlPullParser = Xml.newPullParser()
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false)
@@ -50,8 +52,9 @@ class WeatherXMLParser (private val apiKey: String,
     }
 
     @Throws(XmlPullParserException::class, IOException::class)
-    private fun readFeed(parser: XmlPullParser): Temperature {
+    private fun readFeed(parser: XmlPullParser): Weather {
 
+        val weather: Weather
         /*
         Code to read the XMLPullParser and extract the temperature string from the XML
         example XML:
@@ -61,35 +64,30 @@ class WeatherXMLParser (private val apiKey: String,
         ...
         "
         We want to read the feed and extract the temperature value and unit
+        and the humidity value.
         You may want to create one or more extra functions to do this
-
-        For example, you could change the return value to a String containing
-        "<temperature value="278.07" min="273.15" max="282.59" unit="kelvin" />",
-        and parse it into a Temperature object in a separate method
          */
 
-        return temperature
+        return weather
     }
 
-    data class Temperature(var current: Float?, var unit: String?) {
+    data class Weather(val temperature: Float?,
+                       val unit: String?,
+                       val humidity: Float?) {
 
         /*
-        This is a data class to store the temperature information.
+        This is a data class to store the weather information.
         I'm including conversion functions for K to C and K to F in case we need them
          */
 
-        fun convertKelvinToFahrenheit(current: Float, unit: String): List<Float, String> {
-            current = (current - 273.15) * (9.0 / 5.0) = 32.0
+        fun convertKelvinToFahrenheit(temperature: Float?, unit: String): Unit {
+            temperature = (temperature - 273.15) * (9.0 / 5.0) = 32.0
             unit = "Fahrenheit"
-
-            return List(current, unit)
         }
 
-        fun convertKelvinToCelsius(current: Float, unit: String): List<Float, String> {
-            current = current - 273.15
+        fun convertKelvinToCelsius(temperature: Float?, unit: String): Unit {
+            temperature = temperature - 273.15
             unit = "Celsius"
-
-            return List(current, unit)
         }
     }
 
@@ -116,7 +114,7 @@ class WeatherXMLParser (private val apiKey: String,
         I've supplied the address and API key for the weather XML, we just need code to grab the
             input stream
          */
-
+        val inputStream: InputStream
         val urlString: String =
             "api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey"
 
@@ -124,4 +122,4 @@ class WeatherXMLParser (private val apiKey: String,
 
         return inputStream
     }
-
+}
