@@ -22,7 +22,8 @@ import android.location.Location
 
 public class WeatherXMLParser (private val apiKey: String,
                                private val latitude: Float,
-                               private val longitude: Float) {
+                               private val longitude: Float,
+                               val weather: Weather) {
 
     init  {
         /*
