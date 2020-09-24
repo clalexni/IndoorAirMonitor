@@ -18,7 +18,7 @@ object SQLDatabaseConnection {
     internal var username: String
     internal var password: String
 
-    fun mySQLRetrieveQuery {
+    fun mySQLRetrievalQuery {
         /*
         * Code to retrieve information from DB
          */
