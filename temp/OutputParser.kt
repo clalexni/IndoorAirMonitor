@@ -1,5 +1,5 @@
-class OutputParser (value1: Float?,
-                    value2: Float?) {
+class OutputParser (val value1: Float?,
+                    val value2: Float?) {
 
     enum class PeakFlowRateValue { GREEN, YELLOW, RED }
 
