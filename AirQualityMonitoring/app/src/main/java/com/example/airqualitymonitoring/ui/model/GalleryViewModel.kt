@@ -1,4 +1,4 @@
-package com.example.airqualitymonitoring.ui.gallery
+package com.example.airqualitymonitoring.ui.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

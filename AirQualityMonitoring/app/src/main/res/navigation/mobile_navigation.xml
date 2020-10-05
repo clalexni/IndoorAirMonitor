@@ -13,13 +13,19 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.airqualitymonitoring.ui.gallery.GalleryFragment"
+        android:name="com.example.airqualitymonitoring.ui.model.ModelManagerFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.airqualitymonitoring.ui.slideshow.SlideshowFragment"
+        android:name="com.example.airqualitymonitoring.ui.datastreams.BluetoothDevicesFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <!--fragment
+        android:id="@+id/nav_questions"
+        android:name="com.example.airqualitymonitoring.ui.datastreams.BluetoothDevicesFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" /-->
 </navigation>

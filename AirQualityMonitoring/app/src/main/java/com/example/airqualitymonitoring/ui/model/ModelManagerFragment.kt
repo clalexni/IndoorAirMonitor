@@ -1,4 +1,6 @@
-package com.example.airqualitymonitoring.ui.gallery
+package com.example.airqualitymonitoring.ui.model
+// parses the various data sources from the DB and sends them to the model, as well as returning the
+// output
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.airqualitymonitoring.R
 
-class GalleryFragment : Fragment() {
+class ModelManagerFragment : Fragment() {
 
     private lateinit var galleryViewModel: GalleryViewModel
 
