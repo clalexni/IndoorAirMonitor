@@ -31,6 +31,8 @@
 package com.raywenderlich.android.majesticreader.framework
 
 import android.app.Application
+import com.example.airqualitymonitoring.data.AirQualityRepository
+import com.example.airqualitymonitoring.interactors.*
 import com.raywenderlich.android.majesticreader.data.BookmarkRepository
 import com.raywenderlich.android.majesticreader.data.DocumentRepository
 import com.raywenderlich.android.majesticreader.framework.db.InMemoryOpenDocumentDataSource
@@ -46,6 +48,7 @@ class MajesticReaderApplication : Application() {
         RoomDocumentDataSource(this),
         InMemoryOpenDocumentDataSource()
     )
+    val airQualityRepository = AirQualityRepository(AirQualityDataSourceImpl())
 
     MajesticViewModelFactory.inject(
         this,
@@ -57,7 +60,11 @@ class MajesticReaderApplication : Application() {
             GetDocuments(documentRepository),
             RemoveDocument(documentRepository),
             GetOpenDocument(documentRepository),
-            SetOpenDocument(documentRepository)
+            SetOpenDocument(documentRepository),
+            ReadAirQuality(airQualityRepository),
+            ReadPM2_5(airQualityRepository),
+            ReadPM10_0(airQualityRepository),
+            SetMonitorDeviceName(airQualityRepository)
         )
     )
   }
