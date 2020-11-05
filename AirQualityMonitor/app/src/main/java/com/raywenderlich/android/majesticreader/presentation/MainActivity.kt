@@ -40,17 +40,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.raywenderlich.android.majesticreader.domain.Document
 import com.raywenderlich.android.majesticreader.R
+import com.raywenderlich.android.majesticreader.presentation.airQuality.AirQualityFragment
 import com.raywenderlich.android.majesticreader.presentation.library.LibraryFragment
 import com.raywenderlich.android.majesticreader.presentation.reader.ReaderFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    MainActivityDelegate {
+/*NavigationView.OnNavigationItemSelectedListener, MainActivityDelegate  */
+class MainActivity : AppCompatActivity(){
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-    val toolbar: Toolbar = findViewById(R.id.toolbar)
+
+    if (savedInstanceState == null)
+    {
+      supportFragmentManager
+              .beginTransaction()
+              .add(R.id.drawer_layout, AirQualityFragment.newInstance(), "MonitorList")
+              .commit()
+    }
+    /*val toolbar: Toolbar = findViewById(R.id.toolbar)
     setSupportActionBar(toolbar)
 
     val toggle = ActionBarDrawerToggle(
@@ -65,11 +74,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     if(savedInstanceState == null) {
       nav_view.menu.findItem(R.id.nav_library).isChecked = true
       nav_view.menu.performIdentifierAction(R.id.nav_library, 0)
-    }
+    }*/
   }
 
 
-  override fun onBackPressed() {
+  /*override fun onBackPressed() {
     val drawerLayout: DrawerLayout = findViewById(
         R.id.drawer_layout)
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -87,6 +96,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
           .commit()
       R.id.nav_reader -> openDocument(
           Document.EMPTY)
+      R.id.air_monitor -> supportFragmentManager.beginTransaction()
+              .replace(R.id.content, AirQualityFragment.newInstance())
+              .commitNow()
     }
     val drawerLayout: DrawerLayout = findViewById(
         R.id.drawer_layout)
@@ -99,5 +111,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     supportFragmentManager.beginTransaction()
         .replace(R.id.content, ReaderFragment.newInstance(document))
         .commit()
-  }
+  }*/
 }

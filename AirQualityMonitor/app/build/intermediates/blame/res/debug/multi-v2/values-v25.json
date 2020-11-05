@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\John DAngelo\\Desktop\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\John DAngelo\\.gradle\\caches\\transforms-2\\files-2.1\\17f64dac7f8737c3a0d0e215980c6127\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\54b2c32c6e0a5b40c458cd2ce94ef34a\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

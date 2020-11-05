@@ -1,76 +1,66 @@
 package com.raywenderlich.android.majesticreader.framework
 
-import android.util.Log
 import com.example.airqualitymonitoring.data.AirQualityDataSource
 import com.example.airqualitymonitoring.domain.AirQuality
-import com.raywenderlich.android.majesticreader.framework.purpleAirAPI.Model.MonitorResponse
 import com.raywenderlich.android.majesticreader.framework.purpleAirAPI.PurpleAirApi
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import org.json.JSONObject
+import java.net.URL
 
 class AirQualityDataSourceImpl: AirQualityDataSource {
 
-    private var indoorAirMonitor: AirQuality = AirQuality("",0.0,0.0)
-
-    val purpleAirRetrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://www.purpleair.com/")
-            .build()
-
-    val purpleAirApi = purpleAirRetrofit.create(PurpleAirApi::class.java)
-
-    val purpleAirApiCall: Call<MonitorResponse> = purpleAirApi.getAllDataPoints()
+    private var indoorAirMonitor: AirQuality = AirQuality("23",0.0,0.0)
 
     override suspend fun read(): AirQuality {
         return indoorAirMonitor
     }
     override suspend fun readPM2_5(): Double
     {
-        purpleAirApiCall.enqueue(object: Callback<MonitorResponse> {
-            override fun onFailure(call: Call<MonitorResponse>, t: Throwable) {
-                Log.e("ERROR", t.message.toString())
-            }
-
-            override fun onResponse(call: Call<MonitorResponse>, response: Response<MonitorResponse>) {
-
-                val fullData: MonitorResponse = response.body()!!
-                val stringBuilder = StringBuilder()
-
-                //Set 2_5 and 10_0 here
-                val pm2_5 = fullData.data[0].pm_2
-                indoorAirMonitor.pm2_5 = pm2_5!!
-            }
-        })
-
+        updateAirMonitorData()
         return indoorAirMonitor.pm2_5
     }
 
     override suspend fun readPM10_0(): Double
     {
-        purpleAirApiCall.enqueue(object: Callback<MonitorResponse> {
-            override fun onFailure(call: Call<MonitorResponse>, t: Throwable) {
-                Log.e("ERROR", t.message.toString())
-            }
-
-            override fun onResponse(call: Call<MonitorResponse>, response: Response<MonitorResponse>) {
-
-                val fullData: MonitorResponse = response.body()!!
-                val stringBuilder = StringBuilder()
-
-                //Set 2_5 and 10_0 here
-                val pm_10 = fullData.data[0].pm_10
-                indoorAirMonitor.pm10_0 = pm_10!!
-            }
-        })
-
+        updateAirMonitorData()
         return indoorAirMonitor.pm10_0
     }
 
     override suspend fun setDeviceName(name: String) {
         indoorAirMonitor.deviceID = name
     }
+
+    private suspend fun updateAirMonitorData()
+    {
+        val url = "https://www.purpleair.com/json?show="
+        val airMonitorUrl = url + indoorAirMonitor.deviceID
+
+        val purpleAirResponse = getUrlResponse(airMonitorUrl)
+        val result: JSONObject = parsePurpleAirResponse(purpleAirResponse)
+
+        if (result.has("pm2_5_atm"))
+            indoorAirMonitor.pm2_5 = result.getDouble("pm2_5_atm")
+
+        if (result.has("pm10_0_atm"))
+            indoorAirMonitor.pm2_5 = result.getDouble("pm2_5_atm")
+    }
+
+    private suspend fun getUrlResponse(url : String) : String {
+        var response = ""
+        val job = GlobalScope.launch {
+            response = URL(url).readText()
+        }
+        job.join()
+        return response
+    }
+
+    private fun parsePurpleAirResponse(purpleAirResponse: String): JSONObject {
+        val responseJSON = JSONObject(purpleAirResponse)
+        val results = responseJSON.getJSONArray("results")
+        return results[0] as JSONObject
+    }
+
+    //Look into looping a function call every 5 mins or so.
 
 }

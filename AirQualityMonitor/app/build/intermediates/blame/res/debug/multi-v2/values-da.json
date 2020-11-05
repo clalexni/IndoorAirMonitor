@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\John DAngelo\\Desktop\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
+            "outputFile": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\John DAngelo\\.gradle\\caches\\transforms-2\\files-2.1\\8ec5b854a64ea2ae69e4fdd9f6764ab5\\res\\values-da\\values-da.xml",
+                    "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\e60ce03faa99229a67c7d420d7e7ab2d\\res\\values-da\\values-da.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\John DAngelo\\.gradle\\caches\\transforms-2\\files-2.1\\17f64dac7f8737c3a0d0e215980c6127\\res\\values-da\\values-da.xml",
+                    "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\54b2c32c6e0a5b40c458cd2ce94ef34a\\res\\values-da\\values-da.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

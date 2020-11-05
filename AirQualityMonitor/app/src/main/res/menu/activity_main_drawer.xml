@@ -42,6 +42,11 @@
         android:id="@+id/nav_reader"
         android:icon="@drawable/ic_reader"
         android:title="@string/menu_reader"/>
+
+    <item
+        android:id="@+id/air_monitor"
+        android:icon="@drawable/ic_reader"
+        android:title="@string/menu_reader"/>
   </group>
 
 </menu>

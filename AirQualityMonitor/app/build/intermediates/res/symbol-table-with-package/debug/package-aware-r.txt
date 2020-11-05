@@ -1254,6 +1254,9 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id airMonitorData
+id air_monitor
+id air_quality_item
 id alertTitle
 id aligned
 id all
@@ -1377,7 +1380,6 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id nav_library
 id nav_reader
-id nav_view
 id navigation_header_container
 id never
 id none
@@ -1560,6 +1562,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_splash
+layout air_quality_fragment
 layout app_bar_main
 layout content_main
 layout custom_dialog
@@ -1580,6 +1583,7 @@ layout design_text_input_password_icon
 layout fragment_library
 layout fragment_reader
 layout item_bookmark
+layout item_data
 layout item_document
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include

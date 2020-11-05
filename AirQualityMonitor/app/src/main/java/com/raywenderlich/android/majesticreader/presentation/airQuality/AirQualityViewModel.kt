@@ -1,10 +1,8 @@
 package com.raywenderlich.android.majesticreader.presentation.airQuality
 
 import android.app.Application
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.airqualitymonitoring.domain.AirQuality
-import com.raywenderlich.android.majesticreader.domain.Document
 import com.raywenderlich.android.majesticreader.framework.Interactors
 import com.raywenderlich.android.majesticreader.framework.MajesticViewModel
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +25,7 @@ class AirQualityViewModel(application: Application, interactors: Interactors)
     }
 
     fun readPM2_5() {
-        GlobalScope.launch {
+            GlobalScope.launch(Dispatchers.Main) {
             pm2_5.postValue(interactors.readPM2_5())
         }
     }
