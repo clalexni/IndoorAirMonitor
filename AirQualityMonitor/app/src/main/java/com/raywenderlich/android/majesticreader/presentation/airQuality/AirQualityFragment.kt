@@ -2,10 +2,14 @@ package com.raywenderlich.android.majesticreader.presentation.airQuality
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import androidx.lifecycle.Observer
 import com.raywenderlich.android.majesticreader.R
 import com.raywenderlich.android.majesticreader.framework.MajesticViewModelFactory
@@ -31,12 +35,34 @@ class AirQualityFragment : Fragment() {
         //Causing crash
         viewModel = ViewModelProviders.of(this, MajesticViewModelFactory).get(AirQualityViewModel::class.java)
 
-        val pm2_5Observer = Observer<Double> { newName ->
-            // Update the UI, in this case, a TextView.
-            air_quality_item.text = newName.toString()
+        //viewModel.readAirQuality()   //need to put in a poll
+
+        viewModel.pm2_5.observe(this, Observer<Double> { newName ->
+            pm2_5Item.text = newName.toString()})
+
+        viewModel.pm10_0.observe(this, Observer<Double> { newName ->
+            pm10_0Item.text = newName.toString()})
+
+        setDeviceName.setOnClickListener {
+
+            viewModel.setDeviceName(editDeviceName.text.toString())
         }
-        viewModel.readPM2_5()
-        viewModel.pm2_5.observe(this, pm2_5Observer)
+
+        //Polling
+        val handler = Handler()
+
+        val airMonitorPoll = object : Runnable {
+            override fun run() {
+                viewModel.readAirQuality()
+                Log.d("timer","20 secs passed")
+                handler.postDelayed(this, 20000)
+            }
+        }
+
+        handler.postDelayed(airMonitorPoll,0)
+
+
     }
+
 
 }

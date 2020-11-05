@@ -1,63 +1,72 @@
 package com.raywenderlich.android.majesticreader.framework
 
+import android.util.Log
 import com.example.airqualitymonitoring.data.AirQualityDataSource
 import com.example.airqualitymonitoring.domain.AirQuality
-import com.raywenderlich.android.majesticreader.framework.purpleAirAPI.PurpleAirApi
+import com.google.gson.JsonArray
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.json.JSONArray
 import org.json.JSONObject
+import java.lang.Exception
 import java.net.URL
 
 class AirQualityDataSourceImpl: AirQualityDataSource {
 
-    private var indoorAirMonitor: AirQuality = AirQuality("23",0.0,0.0)
+    private var airMonitor: AirQuality = AirQuality("23",0.0,0.0)
 
-    override suspend fun read(): AirQuality {
-        return indoorAirMonitor
-    }
-    override suspend fun readPM2_5(): Double
-    {
-        updateAirMonitorData()
-        return indoorAirMonitor.pm2_5
-    }
-
-    override suspend fun readPM10_0(): Double
-    {
-        updateAirMonitorData()
-        return indoorAirMonitor.pm10_0
-    }
-
-    override suspend fun setDeviceName(name: String) {
-        indoorAirMonitor.deviceID = name
-    }
-
-    private suspend fun updateAirMonitorData()
-    {
+    override suspend fun updateAirMonitor(): AirQuality {
         val url = "https://www.purpleair.com/json?show="
-        val airMonitorUrl = url + indoorAirMonitor.deviceID
+        val airMonitorUrl = url + airMonitor.deviceID
 
         val purpleAirResponse = getUrlResponse(airMonitorUrl)
         val result: JSONObject = parsePurpleAirResponse(purpleAirResponse)
 
-        if (result.has("pm2_5_atm"))
-            indoorAirMonitor.pm2_5 = result.getDouble("pm2_5_atm")
+        if (result.has("pm2_5_atm") && result.getDouble("pm2_5_atm") != null)
+            airMonitor.pm2_5 = result.getDouble("pm2_5_atm")
 
-        if (result.has("pm10_0_atm"))
-            indoorAirMonitor.pm2_5 = result.getDouble("pm2_5_atm")
+        if (result.has("pm10_0_atm") && result.getDouble("pm10_0_atm") != null)
+            airMonitor.pm10_0 = result.getDouble("pm10_0_atm")
+        else
+            Log.e("URL request", "Request returned empty data")
+
+        return airMonitor
     }
+    override suspend fun getPM2_5(): Double
+    {
+        return airMonitor.pm2_5
+    }
+
+    override suspend fun getPM10_0(): Double
+    {
+        return airMonitor.pm10_0
+    }
+
+    override fun setDeviceName(name: String) {
+        airMonitor.deviceID = name
+    }
+
+
 
     private suspend fun getUrlResponse(url : String) : String {
         var response = ""
         val job = GlobalScope.launch {
-            response = URL(url).readText()
+                try {
+                    response = URL(url).readText()
+                }
+                catch (e:Exception){
+                    Log.e("URL request", "Request failed")
+                }
         }
         job.join()
         return response
     }
 
     private fun parsePurpleAirResponse(purpleAirResponse: String): JSONObject {
+        if (purpleAirResponse == null || purpleAirResponse == "") return  JSONObject().put("Nothing","nope")
         val responseJSON = JSONObject(purpleAirResponse)
         val results = responseJSON.getJSONArray("results")
+        if (results.length() == 0 || results == null) return  JSONObject().put("Nothing","nope")
         return results[0] as JSONObject
     }
 

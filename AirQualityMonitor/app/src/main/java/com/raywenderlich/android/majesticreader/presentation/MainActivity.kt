@@ -59,57 +59,7 @@ class MainActivity : AppCompatActivity(){
               .add(R.id.drawer_layout, AirQualityFragment.newInstance(), "MonitorList")
               .commit()
     }
-    /*val toolbar: Toolbar = findViewById(R.id.toolbar)
-    setSupportActionBar(toolbar)
 
-    val toggle = ActionBarDrawerToggle(
-        this, drawer_layout, toolbar,
-        R.string.navigation_drawer_open,
-        R.string.navigation_drawer_close)
-    drawer_layout.addDrawerListener(toggle)
-    toggle.syncState()
-
-    nav_view.setNavigationItemSelectedListener(this)
-
-    if(savedInstanceState == null) {
-      nav_view.menu.findItem(R.id.nav_library).isChecked = true
-      nav_view.menu.performIdentifierAction(R.id.nav_library, 0)
-    }*/
   }
 
-
-  /*override fun onBackPressed() {
-    val drawerLayout: DrawerLayout = findViewById(
-        R.id.drawer_layout)
-    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-      drawerLayout.closeDrawer(GravityCompat.START)
-    } else {
-      super.onBackPressed()
-    }
-  }
-
-  override fun onNavigationItemSelected(item: MenuItem): Boolean {
-    // Handle navigation view item clicks here.
-    when (item.itemId) {
-      R.id.nav_library -> supportFragmentManager.beginTransaction()
-          .replace(R.id.content, LibraryFragment.newInstance())
-          .commit()
-      R.id.nav_reader -> openDocument(
-          Document.EMPTY)
-      R.id.air_monitor -> supportFragmentManager.beginTransaction()
-              .replace(R.id.content, AirQualityFragment.newInstance())
-              .commitNow()
-    }
-    val drawerLayout: DrawerLayout = findViewById(
-        R.id.drawer_layout)
-    drawerLayout.closeDrawer(GravityCompat.START)
-    return true
-  }
-
-  override fun openDocument(document: Document) {
-    nav_view.menu.findItem(R.id.nav_reader).isChecked = true
-    supportFragmentManager.beginTransaction()
-        .replace(R.id.content, ReaderFragment.newInstance(document))
-        .commit()
-  }*/
 }

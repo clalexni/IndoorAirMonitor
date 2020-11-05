@@ -5,10 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.airqualitymonitoring.domain.AirQuality
 import com.raywenderlich.android.majesticreader.framework.Interactors
 import com.raywenderlich.android.majesticreader.framework.MajesticViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 class AirQualityViewModel(application: Application, interactors: Interactors)
     : MajesticViewModel(application, interactors) {
@@ -20,16 +17,21 @@ class AirQualityViewModel(application: Application, interactors: Interactors)
     fun readAirQuality()
     {
         GlobalScope.launch {
-            airQuality.postValue(interactors.readAirQuality())
+            launch {
+                airQuality.postValue(interactors.readAirQuality())
+            }.join()
+            delay(100)
+            pm2_5.postValue(airQuality.value!!.pm2_5)
+            pm10_0.postValue(airQuality.value!!.pm10_0)
         }
     }
 
-    fun readPM2_5() {
+    fun getPM2_5() {
             GlobalScope.launch(Dispatchers.Main) {
             pm2_5.postValue(interactors.readPM2_5())
         }
     }
-    fun readPM10_0() {
+    fun getPM10_0() {
         GlobalScope.launch {
             pm10_0.postValue(interactors.readPM10_0())
         }

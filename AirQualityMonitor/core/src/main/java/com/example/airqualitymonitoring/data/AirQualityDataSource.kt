@@ -4,12 +4,12 @@ import com.example.airqualitymonitoring.domain.AirQuality
 
 interface AirQualityDataSource {
 
-    suspend fun read(): AirQuality
+    suspend fun updateAirMonitor(): AirQuality
 
-    suspend fun readPM2_5(): Double
+    suspend fun getPM2_5(): Double
 
-    suspend fun readPM10_0(): Double
+    suspend fun getPM10_0(): Double
 
-    suspend fun setDeviceName(name: String)
+    fun setDeviceName(name: String)
 
 }

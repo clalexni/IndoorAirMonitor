@@ -1256,7 +1256,6 @@ id activity_chooser_view_content
 id add
 id airMonitorData
 id air_monitor
-id air_quality_item
 id alertTitle
 id aligned
 id all
@@ -1309,6 +1308,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id deviceName
 id dialog_button
 id dimensions
 id direct
@@ -1322,6 +1322,7 @@ id drawer_layout
 id easeIn
 id easeInOut
 id easeOut
+id editDeviceName
 id edit_query
 id end
 id end_padder
@@ -1399,6 +1400,10 @@ id path
 id pathRelative
 id percent
 id pin
+id pm10_0Item
+id pm10_0text
+id pm2_5Item
+id pm2_5text
 id position
 id postLayout
 id progress_circular
@@ -1432,6 +1437,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id setDeviceName
 id shortcut
 id showCustom
 id showHome
