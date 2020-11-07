@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.lifecycle.Observer
 import com.raywenderlich.android.majesticreader.R
 import com.raywenderlich.android.majesticreader.framework.MajesticViewModelFactory
@@ -45,23 +43,29 @@ class AirQualityFragment : Fragment() {
 
         setDeviceName.setOnClickListener {
 
+            //make sure input is interger only and valid set of integer > 0
             viewModel.setDeviceName(editDeviceName.text.toString())
         }
 
+        //Helper button to give info on where to find device id.
+        //Get info here https://www2.purpleair.com/community/faq
         //Polling
+        airMonitorPoll()
+    }
+
+    private fun airMonitorPoll() {
         val handler = Handler()
 
         val airMonitorPoll = object : Runnable {
             override fun run() {
+                //put code here
                 viewModel.readAirQuality()
-                Log.d("timer","20 secs passed")
+                Log.d("timer", "20 secs passed and AirMonitor API is Polled")
                 handler.postDelayed(this, 20000)
             }
         }
 
-        handler.postDelayed(airMonitorPoll,0)
-
-
+        handler.postDelayed(airMonitorPoll, 0)
     }
 
 

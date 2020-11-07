@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pm10_0text" />
 
+    //Make a (+)int filter
     <EditText
         android:id="@+id/editDeviceName"
         android:layout_width="wrap_content"

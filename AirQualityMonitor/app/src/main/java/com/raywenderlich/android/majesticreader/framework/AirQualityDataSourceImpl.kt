@@ -3,32 +3,28 @@ package com.raywenderlich.android.majesticreader.framework
 import android.util.Log
 import com.example.airqualitymonitoring.data.AirQualityDataSource
 import com.example.airqualitymonitoring.domain.AirQuality
-import com.google.gson.JsonArray
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.json.JSONArray
 import org.json.JSONObject
 import java.lang.Exception
 import java.net.URL
 
 class AirQualityDataSourceImpl: AirQualityDataSource {
-
-    private var airMonitor: AirQuality = AirQuality("23",0.0,0.0)
+    private var airMonitor: AirQuality = AirQuality("65536",0.0,0.0)
 
     override suspend fun updateAirMonitor(): AirQuality {
-        val url = "https://www.purpleair.com/json?show="
-        val airMonitorUrl = url + airMonitor.deviceID
+        val getRequest = "https://www.purpleair.com/json?show="
+        val deviceGetRequest = getRequest + airMonitor.deviceID
 
-        val purpleAirResponse = getUrlResponse(airMonitorUrl)
-        val result: JSONObject = parsePurpleAirResponse(purpleAirResponse)
-
-        if (result.has("pm2_5_atm") && result.getDouble("pm2_5_atm") != null)
-            airMonitor.pm2_5 = result.getDouble("pm2_5_atm")
-
-        if (result.has("pm10_0_atm") && result.getDouble("pm10_0_atm") != null)
-            airMonitor.pm10_0 = result.getDouble("pm10_0_atm")
-        else
-            Log.e("URL request", "Request returned empty data")
+        val purpleAirJson = getJsonResponse(deviceGetRequest)
+        val isValidJson = validateAirMonitorJson(purpleAirJson)
+        if (isValidJson){
+            val result = parsePurpleAirJson(purpleAirJson)
+            airMonitor.pm2_5 = result.first
+            airMonitor.pm10_0 = result.second
+        }
+        else //put in validate.
+            Log.e("JSON Validation", "Request returned empty data")
 
         return airMonitor
     }
@@ -46,9 +42,7 @@ class AirQualityDataSourceImpl: AirQualityDataSource {
         airMonitor.deviceID = name
     }
 
-
-
-    private suspend fun getUrlResponse(url : String) : String {
+    private suspend fun getJsonResponse(url: String): JSONObject {
         var response = ""
         val job = GlobalScope.launch {
                 try {
@@ -59,17 +53,55 @@ class AirQualityDataSourceImpl: AirQualityDataSource {
                 }
         }
         job.join()
-        return response
+        val x = 0
+        return if (response.isNotEmpty()) JSONObject(response) else JSONObject()
     }
 
-    private fun parsePurpleAirResponse(purpleAirResponse: String): JSONObject {
-        if (purpleAirResponse == null || purpleAirResponse == "") return  JSONObject().put("Nothing","nope")
-        val responseJSON = JSONObject(purpleAirResponse)
-        val results = responseJSON.getJSONArray("results")
-        if (results.length() == 0 || results == null) return  JSONObject().put("Nothing","nope")
-        return results[0] as JSONObject
+    private fun validateAirMonitorJson(json: JSONObject): Boolean {
+        if (json == null) return false
+
+        val resultsArray = json.getJSONArray("results")
+        val isEmptyJson = resultsArray.length() == 0
+        if (isEmptyJson) return false
+
+        val deviceJson = resultsArray[0] as JSONObject
+        val jsonKeys = listOf("pm2_5_atm", "pm10_0_atm")
+
+        val hasKeys = validateJsonKeys(deviceJson, jsonKeys)
+        if(!hasKeys)
+            return false
+
+        return true
+    }
+    private fun validateJsonKeys(json: JSONObject, jsonKeys : List<String>) : Boolean {
+        for (jsonKey in jsonKeys){
+            if (!json.has(jsonKey)) {
+                Log.e("JSON Key not found", jsonKey)
+                return false
+            }
+            if (json.get(jsonKey) == null) {
+                Log.e("JSON Value not found", jsonKey)
+                return false
+            }
+        }
+
+        return true
     }
 
-    //Look into looping a function call every 5 mins or so.
+    private fun parsePurpleAirJson(responseJSON: JSONObject): Pair<Double,Double> {
+        val resultsArray = responseJSON.getJSONArray("results")
 
+        val deviceJson = resultsArray[0] as JSONObject
+        val childDeviceJson : JSONObject
+        if (resultsArray.length() > 1)
+            childDeviceJson = resultsArray[1] as JSONObject
+
+        //Can implement some criteria to pick between the two if wanted.
+        //like averaging.
+
+        val device_PM2_5 = deviceJson.getDouble("pm2_5_atm")
+        val device_PM10_0 = deviceJson.getDouble("pm10_0_atm")
+
+        return Pair(device_PM2_5,device_PM10_0)
+    }
 }

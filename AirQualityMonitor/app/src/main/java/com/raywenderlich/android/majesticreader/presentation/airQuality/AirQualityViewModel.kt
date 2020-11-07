@@ -17,10 +17,9 @@ class AirQualityViewModel(application: Application, interactors: Interactors)
     fun readAirQuality()
     {
         GlobalScope.launch {
-            launch {
+            async {
                 airQuality.postValue(interactors.readAirQuality())
-            }.join()
-            delay(100)
+            }.await()
             pm2_5.postValue(airQuality.value!!.pm2_5)
             pm10_0.postValue(airQuality.value!!.pm10_0)
         }
