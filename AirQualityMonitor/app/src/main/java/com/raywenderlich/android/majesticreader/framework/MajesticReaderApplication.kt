@@ -31,8 +31,8 @@
 package com.raywenderlich.android.majesticreader.framework
 
 import android.app.Application
-import com.example.airqualitymonitoring.data.AirQualityRepository
-import com.example.airqualitymonitoring.interactors.*
+import com.example.appCore.data.AirMonitorRepository
+import com.example.appCore.interactors.*
 import com.raywenderlich.android.majesticreader.data.BookmarkRepository
 import com.raywenderlich.android.majesticreader.data.DocumentRepository
 import com.raywenderlich.android.majesticreader.framework.db.InMemoryOpenDocumentDataSource
@@ -48,23 +48,26 @@ class MajesticReaderApplication : Application() {
         RoomDocumentDataSource(this),
         InMemoryOpenDocumentDataSource()
     )
-    val airQualityRepository = AirQualityRepository(AirQualityDataSourceImpl())
+    val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
 
+    //replace with some dependency injection like Koin.
     MajesticViewModelFactory.inject(
         this,
         Interactors(
             AddBookmark(bookmarkRepository),
             GetBookmarks(bookmarkRepository),
             RemoveBookmark(bookmarkRepository),
+
             AddDocument(documentRepository),
             GetDocuments(documentRepository),
             RemoveDocument(documentRepository),
             GetOpenDocument(documentRepository),
             SetOpenDocument(documentRepository),
-            ReadAirQuality(airQualityRepository),
-            ReadPM2_5(airQualityRepository),
-            ReadPM10_0(airQualityRepository),
-            SetMonitorDeviceName(airQualityRepository)
+
+            UpdateAirMonitor(airMonitorRepository),
+            GetPM2_5(airMonitorRepository),
+            GetPM10_0(airMonitorRepository),
+            SetAirMonitorID(airMonitorRepository)
         )
     )
   }
