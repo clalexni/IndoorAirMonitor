@@ -1254,6 +1254,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id airMonitorData
+id air_monitor
 id alertTitle
 id aligned
 id all
@@ -1306,6 +1308,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id deviceName
 id dialog_button
 id dimensions
 id direct
@@ -1319,6 +1322,7 @@ id drawer_layout
 id easeIn
 id easeInOut
 id easeOut
+id editDeviceName
 id edit_query
 id end
 id end_padder
@@ -1377,7 +1381,6 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id nav_library
 id nav_reader
-id nav_view
 id navigation_header_container
 id never
 id none
@@ -1397,6 +1400,10 @@ id path
 id pathRelative
 id percent
 id pin
+id pm10_0Item
+id pm10_0text
+id pm2_5Item
+id pm2_5text
 id position
 id postLayout
 id progress_circular
@@ -1430,6 +1437,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id setDeviceName
 id shortcut
 id showCustom
 id showHome
@@ -1560,6 +1568,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_splash
+layout air_quality_fragment
 layout app_bar_main
 layout content_main
 layout custom_dialog
@@ -1580,6 +1589,7 @@ layout design_text_input_password_icon
 layout fragment_library
 layout fragment_reader
 layout item_bookmark
+layout item_data
 layout item_document
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
