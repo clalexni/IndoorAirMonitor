@@ -1,5 +1,6 @@
 package com.example.appCore.domain
 
-data class Weather(val temperature: Float,
+//Temperature in *C
+data class Weather(val zipCode: Int, val temperature: Float,
                    val humidity: Float) {
 }

@@ -4,6 +4,11 @@ import com.example.appCore.domain.Weather
 
 interface WeatherDataSource {
 
-    suspend fun read(weather: Weather): Weather
+    suspend fun updateWeather(): Weather
 
+    fun getTemp() : Float
+
+    fun getHumidity() : Float
+
+    fun setZipCode(zipCode: Int)
 }

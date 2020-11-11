@@ -32,7 +32,10 @@ package com.raywenderlich.android.majesticreader.framework
 
 import android.app.Application
 import com.example.appCore.data.AirMonitorRepository
-import com.example.appCore.interactors.*
+import com.example.appCore.interactors.AirMonitor.GetPM10_0
+import com.example.appCore.interactors.AirMonitor.GetPM2_5
+import com.example.appCore.interactors.AirMonitor.SetAirMonitorID
+import com.example.appCore.interactors.AirMonitor.UpdateAirMonitor
 import com.raywenderlich.android.majesticreader.data.BookmarkRepository
 import com.raywenderlich.android.majesticreader.data.DocumentRepository
 import com.raywenderlich.android.majesticreader.framework.db.InMemoryOpenDocumentDataSource
@@ -64,10 +67,10 @@ class MajesticReaderApplication : Application() {
             GetOpenDocument(documentRepository),
             SetOpenDocument(documentRepository),
 
-            UpdateAirMonitor(airMonitorRepository),
-            GetPM2_5(airMonitorRepository),
-            GetPM10_0(airMonitorRepository),
-            SetAirMonitorID(airMonitorRepository)
+                UpdateAirMonitor(airMonitorRepository),
+                GetPM2_5(airMonitorRepository),
+                GetPM10_0(airMonitorRepository),
+                SetAirMonitorID(airMonitorRepository)
         )
     )
   }

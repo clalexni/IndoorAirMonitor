@@ -1,9 +1,9 @@
 package com.raywenderlich.android.majesticreader.framework
 
-import com.example.appCore.interactors.UpdateAirMonitor
-import com.example.appCore.interactors.GetPM10_0
-import com.example.appCore.interactors.GetPM2_5
-import com.example.appCore.interactors.SetAirMonitorID
+import com.example.appCore.interactors.AirMonitor.UpdateAirMonitor
+import com.example.appCore.interactors.AirMonitor.GetPM10_0
+import com.example.appCore.interactors.AirMonitor.GetPM2_5
+import com.example.appCore.interactors.AirMonitor.SetAirMonitorID
 import com.raywenderlich.android.majesticreader.interactors.*
 
 data class Interactors(
