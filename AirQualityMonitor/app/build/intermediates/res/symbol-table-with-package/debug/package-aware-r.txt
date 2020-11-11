@@ -1438,6 +1438,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id setDeviceName
+id setDeviceNameInfo
 id shortcut
 id showCustom
 id showHome
@@ -1687,6 +1688,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string previous
 string search_menu_title
+string set_monitor_device_id_button
 string status_bar_notification_info_overflow
 string title_activity_main
 style AlertDialog_AppCompat
