@@ -42,13 +42,13 @@ class AirMonitorFragment : Fragment() {
 
         setDeviceName.setOnClickListener {
 
-            //make sure input is integer only and valid set of integer > 0
             viewModel.setDeviceName(editDeviceName.text.toString())
             setDeviceName.text = "Polling"
             Toast.makeText(context,"Polling Data", Toast.LENGTH_LONG).show()
         }
 
         setDeviceNameInfo.setOnClickListener {
+
             val helpText = "Device-ID: A unique code for every sensor the is printed on the sensor sticker or listed in the shipping confirmation email."
 
             val dialogBuilder = AlertDialog.Builder(context)
@@ -58,12 +58,8 @@ class AirMonitorFragment : Fragment() {
             alert.setTitle("Device ID Info")
 
             alert.show()
-
         }
 
-        //Helper button to give info on where to find device id.
-        //Get info here https://www2.purpleair.com/community/faq
-        //Polling
         pollAirMonitorData()
     }
 
@@ -82,6 +78,4 @@ class AirMonitorFragment : Fragment() {
 
         handler.postDelayed(airMonitorPoll, 0)
     }
-
-
 }
