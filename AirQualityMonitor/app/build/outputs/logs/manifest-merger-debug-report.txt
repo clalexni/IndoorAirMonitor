@@ -13,7 +13,7 @@ MERGED from [androidx.room:room-ktx:2.1.0] C:\Users\Huzai\.gradle\caches\transfo
 MERGED from [androidx.room:room-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7c3da5196d8154b3c56089b8ff4d0131\AndroidManifest.xml:17:1-30:12
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fb8e5c9e2f749fd0ff7a703bf58afbde\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ad98148a780368f944ec4a73b0e1c99a\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\1016c43eb3fb20d9091cb662433ed2c8\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\139557666870e578f3a82ce2ceb1988f\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fae7d39375a4e899960cd16982c9d9a0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\562cfc0bbf86a6c8bfb0e7823ae1a9d7\AndroidManifest.xml:17:1-22:12
@@ -36,14 +36,14 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Use
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\53ecbffa38a9a3e8eed412f386108cd5\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\42e36155b595f7cca3164ff34f2bbbf1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\22b50008cdec05f9e56220cee4d06afd\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fcf5b5fccfc4123cf7c440449c2df79f\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\029a0e0c22e3ac880bd397e5b5a05284\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\4d7a354ddc17eb7105c4450a731ed29e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d7b64180ca559100faa901d1376ac3e3\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\76488f27346801b85b427253e00c86be\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\0957d9d55e50fed6bf50c8f5f30c4cec\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\beeb97afb2275961d31472473cfc80a7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7bb481817681084c3ecb50a437d4af34\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9ec03ce03bb209b6910d47073f12a008\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\45320e265daf1cfba84497825f7f21f1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\4bc6a0d500e362c11ea5ab776d3de2c7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\52ba3965adcc14d5ef11fd65728514f6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d5896157aeaf4181485682cc0b5a10fd\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9f8e25b7c5b4a714b1ad4ce5a1ffed73\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\40ece49877a6b0da67cf3224db718541\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\a24326f22c92daf9152644117c2adc78\AndroidManifest.xml:17:1-22:12
@@ -80,16 +80,16 @@ MERGED from [androidx.room:room-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\tra
 MERGED from [androidx.room:room-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7c3da5196d8154b3c56089b8ff4d0131\AndroidManifest.xml:24:5-28:19
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fb8e5c9e2f749fd0ff7a703bf58afbde\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fb8e5c9e2f749fd0ff7a703bf58afbde\AndroidManifest.xml:10:5-20
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\1016c43eb3fb20d9091cb662433ed2c8\AndroidManifest.xml:22:5-23:19
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\1016c43eb3fb20d9091cb662433ed2c8\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.core:core:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e60ce03faa99229a67c7d420d7e7ab2d\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e60ce03faa99229a67c7d420d7e7ab2d\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\dcfba31363ba3ae1d6669a41f5221d7f\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\dcfba31363ba3ae1d6669a41f5221d7f\AndroidManifest.xml:24:5-25:19
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d7b64180ca559100faa901d1376ac3e3\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d7b64180ca559100faa901d1376ac3e3\AndroidManifest.xml:9:5-20
-MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:22:5-28:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:22:5-28:19
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e60ce03faa99229a67c7d420d7e7ab2d\AndroidManifest.xml:24:18-86
 	android:supportsRtl
@@ -150,8 +150,8 @@ MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\cache
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fb8e5c9e2f749fd0ff7a703bf58afbde\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ad98148a780368f944ec4a73b0e1c99a\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ad98148a780368f944ec4a73b0e1c99a\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\1016c43eb3fb20d9091cb662433ed2c8\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\1016c43eb3fb20d9091cb662433ed2c8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\139557666870e578f3a82ce2ceb1988f\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\139557666870e578f3a82ce2ceb1988f\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fae7d39375a4e899960cd16982c9d9a0\AndroidManifest.xml:20:5-44
@@ -196,22 +196,22 @@ MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\Huzai\.gradle\cach
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\42e36155b595f7cca3164ff34f2bbbf1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\22b50008cdec05f9e56220cee4d06afd\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\22b50008cdec05f9e56220cee4d06afd\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fcf5b5fccfc4123cf7c440449c2df79f\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fcf5b5fccfc4123cf7c440449c2df79f\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\029a0e0c22e3ac880bd397e5b5a05284\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\029a0e0c22e3ac880bd397e5b5a05284\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\4d7a354ddc17eb7105c4450a731ed29e\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\4d7a354ddc17eb7105c4450a731ed29e\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d7b64180ca559100faa901d1376ac3e3\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d7b64180ca559100faa901d1376ac3e3\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\76488f27346801b85b427253e00c86be\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\76488f27346801b85b427253e00c86be\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\0957d9d55e50fed6bf50c8f5f30c4cec\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\0957d9d55e50fed6bf50c8f5f30c4cec\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\beeb97afb2275961d31472473cfc80a7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\beeb97afb2275961d31472473cfc80a7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7bb481817681084c3ecb50a437d4af34\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7bb481817681084c3ecb50a437d4af34\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9ec03ce03bb209b6910d47073f12a008\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9ec03ce03bb209b6910d47073f12a008\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\45320e265daf1cfba84497825f7f21f1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\45320e265daf1cfba84497825f7f21f1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\4bc6a0d500e362c11ea5ab776d3de2c7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\4bc6a0d500e362c11ea5ab776d3de2c7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\52ba3965adcc14d5ef11fd65728514f6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\52ba3965adcc14d5ef11fd65728514f6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d5896157aeaf4181485682cc0b5a10fd\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\d5896157aeaf4181485682cc0b5a10fd\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9f8e25b7c5b4a714b1ad4ce5a1ffed73\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9f8e25b7c5b4a714b1ad4ce5a1ffed73\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\40ece49877a6b0da67cf3224db718541\AndroidManifest.xml:20:5-44
@@ -239,12 +239,12 @@ ADDED from [androidx.room:room-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\tran
 	android:name
 		ADDED from [androidx.room:room-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7c3da5196d8154b3c56089b8ff4d0131\AndroidManifest.xml:26:13-74
 provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
-ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:23:9-27:43
+ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:23:9-27:43
 	android:authorities
-		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:25:13-69
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:25:13-69
 	android:multiprocess
-		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:27:13-40
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:27:13-40
 	android:exported
-		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:26:13-37
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e0c84972f8d45855a12f595b80822c3d\AndroidManifest.xml:24:13-79
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\555dbe7411f2fe864ef897f5f0cd6bd7\AndroidManifest.xml:24:13-79

@@ -17,22 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pm10_0text" />
 
-    //Make a (+)int filter
-    <EditText
-        android:id="@+id/editDeviceName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:autofillHints=""
-        android:hint="Input"
-        android:inputType="text"
-        android:text="-1"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/deviceName"
-        app:layout_constraintStart_toEndOf="@+id/deviceName"
-        app:layout_constraintTop_toTopOf="@+id/deviceName"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
         android:id="@+id/pm2_5Item"
         android:layout_width="wrap_content"
@@ -76,12 +60,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pm2_5text" />
 
+    //Make a (+)int filter
+    <EditText
+        android:id="@+id/editDeviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:autofillHints=""
+        android:hint="Input"
+        android:inputType="text"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/deviceName"
+        app:layout_constraintStart_toEndOf="@+id/deviceName"
+        app:layout_constraintTop_toTopOf="@+id/deviceName"
+        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/setDeviceName"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="32dp"
-        android:text="Set ID"
+        android:text="@string/set_monitor_device_id_button"
         app:layout_constraintBottom_toBottomOf="@+id/editDeviceName"
         app:layout_constraintStart_toEndOf="@+id/editDeviceName"
         app:layout_constraintTop_toTopOf="@+id/deviceName" />

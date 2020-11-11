@@ -31,19 +31,9 @@
 package com.raywenderlich.android.majesticreader.presentation
 
 import android.os.Bundle
-import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
-import android.view.MenuItem
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import com.raywenderlich.android.majesticreader.domain.Document
 import com.raywenderlich.android.majesticreader.R
-import com.raywenderlich.android.majesticreader.presentation.airQuality.AirQualityFragment
-import com.raywenderlich.android.majesticreader.presentation.library.LibraryFragment
-import com.raywenderlich.android.majesticreader.presentation.reader.ReaderFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.raywenderlich.android.majesticreader.presentation.airMonitor.AirMonitorFragment
 
 /*NavigationView.OnNavigationItemSelectedListener, MainActivityDelegate  */
 class MainActivity : AppCompatActivity(){
@@ -56,7 +46,7 @@ class MainActivity : AppCompatActivity(){
     {
       supportFragmentManager
               .beginTransaction()
-              .add(R.id.drawer_layout, AirQualityFragment.newInstance(), "MonitorList")
+              .add(R.id.drawer_layout, AirMonitorFragment.newInstance(), "MonitorList")
               .commit()
     }
 
