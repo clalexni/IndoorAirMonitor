@@ -53,7 +53,5 @@ class MainActivity : AppCompatActivity(){
               .add(R.id.fragment_ml_model, MLModelFragment.newInstance(), "MLModel")
               .commit()
     }
-
   }
-
 }

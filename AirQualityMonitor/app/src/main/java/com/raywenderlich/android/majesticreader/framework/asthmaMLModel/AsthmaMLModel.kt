@@ -10,6 +10,7 @@ import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.channels.FileChannel
+import java.text.DecimalFormat
 
 class AsthmaMLModel: MLModelDataSource {
     private val mlModel = MLModel(0.0,0.0)
@@ -20,10 +21,13 @@ class AsthmaMLModel: MLModelDataSource {
 
     override fun getMLOutput2() = mlModel.output2
 
+    //Could be turned into an api call in order to hide the model.
     override fun predictMLResults(temperature: Double, humidity: Int, pm2_5: Double, pm10_0: Double) {
         val interpreter = makeInterpreter()
         val predictedResult = doInference(interpreter, temperature, humidity, pm2_5, pm10_0)
-        mlModel.output1 = predictedResult[0][0].toDouble()
+        val output1 = predictedResult[0][0].toDouble()
+        val x = Math.round(output1).toInt().toDouble()
+        mlModel.output1 = x
         mlModel.output2 = 0.0
 
         interpreter.close()
