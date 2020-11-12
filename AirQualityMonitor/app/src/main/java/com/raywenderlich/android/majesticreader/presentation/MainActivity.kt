@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity(){
     {
       supportFragmentManager
               .beginTransaction()
-              .add(R.id.drawer_layout, AirMonitorFragment.newInstance(),"AirMonitor")
+              .add(R.id.fragment_air_monitor, AirMonitorFragment.newInstance(),"AirMonitor")
+              .add(R.id.fragment_weather, WeatherFragment.newInstance(),"Weather")
               .commit()
     }
 

@@ -35,10 +35,10 @@ class AirMonitorFragment : Fragment() {
         viewModel = ViewModelProviders.of(this, MajesticViewModelFactory).get(AirMonitorViewModel::class.java)
 
         viewModel.pm2_5.observe(this, Observer<Double> { newName ->
-            pm2_5text.text = newName.toString()})
+            pm2_5Data.text = newName.toString()})
 
         viewModel.pm10_0.observe(this, Observer<Double> { newName ->
-            pm10_0text.text = newName.toString()})
+            pm10_0Data.text = newName.toString()})
 
         setMonitorID.setOnClickListener {
 
