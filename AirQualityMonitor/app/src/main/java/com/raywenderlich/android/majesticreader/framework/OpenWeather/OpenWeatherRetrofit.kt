@@ -20,7 +20,7 @@ interface OpenWeatherRetrofit {
     companion object{
         operator fun invoke(): OpenWeatherRetrofit{
             return Retrofit.Builder()
-                    .baseUrl("http://api.openweathermap.org/")
+                    .baseUrl("https://api.openweathermap.org/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(OpenWeatherRetrofit::class.java)

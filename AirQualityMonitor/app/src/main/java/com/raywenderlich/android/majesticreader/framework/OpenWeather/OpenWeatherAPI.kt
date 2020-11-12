@@ -8,6 +8,7 @@ import retrofit2.Response
 import com.example.appCore.data.WeatherDataSource
 import com.example.appCore.domain.Weather
 import com.raywenderlich.android.majesticreader.framework.OpenWeather.Model.OpenWeatherModel
+import java.text.DecimalFormat
 
 class OpenWeatherAPI: WeatherDataSource {
     private var openWeather = Weather("75035", 0.0,0)
@@ -28,7 +29,7 @@ class OpenWeatherAPI: WeatherDataSource {
 
         openWeatherApiCall.enqueue(object: Callback<OpenWeatherModel> {
             override fun onFailure(call: Call<OpenWeatherModel>, t: Throwable) {
-                Log.e("ERROR", t.message.toString())
+                Log.e("CALL ERROR WEATHER", t.message.toString())
             }
 
             override fun onResponse(call: Call<OpenWeatherModel>, response: Response<OpenWeatherModel>) {
@@ -37,10 +38,12 @@ class OpenWeatherAPI: WeatherDataSource {
                     val body : OpenWeatherModel = response.body()!!
                     openWeather.humidity = body.main.humidity
                     val kelvin = body.main.temp
-                    openWeather.temperature = (kelvin - 273.15) * 1.8 + 32 //fahrenheit
+                    val fahrenheit = (kelvin - 273.15) * 1.8 + 32
+                    val format = DecimalFormat(".###")
+                    openWeather.temperature =  format.format(fahrenheit).toDouble()
                 }
                 else{
-                    Log.e("ERROR", response.errorBody().toString())
+                    Log.e("RESP ERROR WEATHER", response.errorBody().toString())
                 }
             }
         })
