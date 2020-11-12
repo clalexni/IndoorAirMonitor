@@ -1,6 +1,7 @@
 package com.raywenderlich.android.majesticreader.framework
 
 import com.example.appCore.interactors.AirMonitor.*
+import com.example.appCore.interactors.MLModel.*
 import com.example.appCore.interactors.Weather.*
 import com.raywenderlich.android.majesticreader.interactors.*
 
@@ -25,5 +26,11 @@ data class Interactors(
         val updateWeather: UpdateWeather,
         val getHumidity: GetHumidity,
         val getTemperature: GetTemperature,
-        val setZipCode: SetZipCode
+        val setZipCode: SetZipCode,
+
+        //ML Model Use case
+        val predictMLResults: PredictMLResults,
+        val getMLResults: GetMLResults,
+        val getMLOutput1: GetMLOutput1,
+        val getMLOutput2: GetMLOutput2
 )
