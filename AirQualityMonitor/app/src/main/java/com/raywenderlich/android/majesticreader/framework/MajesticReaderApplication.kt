@@ -38,6 +38,7 @@ import com.example.appCore.interactors.AirMonitor.SetAirMonitorID
 import com.example.appCore.interactors.AirMonitor.UpdateAirMonitor
 import com.raywenderlich.android.majesticreader.data.BookmarkRepository
 import com.raywenderlich.android.majesticreader.data.DocumentRepository
+import com.raywenderlich.android.majesticreader.framework.PurpleAirMonitor.PurpleAirMonitorAPI
 import com.raywenderlich.android.majesticreader.framework.db.InMemoryOpenDocumentDataSource
 import com.raywenderlich.android.majesticreader.interactors.*
 

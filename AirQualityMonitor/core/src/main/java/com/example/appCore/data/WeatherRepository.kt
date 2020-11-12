@@ -8,5 +8,5 @@ class WeatherRepository (private val dataSource: WeatherDataSource) {
 
     fun getHumidity() = dataSource.getHumidity()
 
-    fun setZipCode(zipCode: Int) = dataSource.setZipCode(zipCode)
+    fun setZipCode(zipCode: String) = dataSource.setZipCode(zipCode)
 }

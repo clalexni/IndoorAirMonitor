@@ -6,9 +6,9 @@ interface WeatherDataSource {
 
     suspend fun updateWeather(): Weather
 
-    fun getTemp() : Float
+    fun getTemp() : Double
 
-    fun getHumidity() : Float
+    fun getHumidity() : Int
 
-    fun setZipCode(zipCode: Int)
+    fun setZipCode(zipCode: String)
 }

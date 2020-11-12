@@ -4,6 +4,6 @@ import com.example.appCore.data.WeatherRepository
 
 class SetZipCode (private val weatherRepository: WeatherRepository)
 {
-    operator fun invoke(zipCode: Int) =
+    operator fun invoke(zipCode: String) =
             weatherRepository.setZipCode(zipCode)
 }
