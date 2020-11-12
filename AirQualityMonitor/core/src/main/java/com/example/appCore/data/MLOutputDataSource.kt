@@ -4,8 +4,10 @@ import com.example.appCore.domain.MLOutput
 
 interface MLOutputDataSource {
 
-    suspend fun read(mlOutput: MLOutput): MLOutput
+    fun getMLResults() : MLOutput
 
-    suspend fun send(mlOutput: MLOutput): MLOutput
+    fun getMLOutput1() : Double
+
+    fun getMLOutput2() : Double
 
 }

@@ -1132,12 +1132,12 @@
         "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\2865379b9db8dc55bc59e0f7094e11d3\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
-        "merged": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
-        "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\54b2c32c6e0a5b40c458cd2ce94ef34a\\res\\drawable\\abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\res\\merged\\debug\\layout_weather_fragment.xml.flat",
         "source": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\src\\main\\res\\layout\\weather_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
+        "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\54b2c32c6e0a5b40c458cd2ce94ef34a\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_data.xml.flat",

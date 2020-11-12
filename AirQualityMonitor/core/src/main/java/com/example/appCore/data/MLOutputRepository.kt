@@ -4,11 +4,10 @@ import com.example.appCore.domain.MLOutput
 
 class MLOutputRepository(private val dataSource: MLOutputDataSource) {
 
-    suspend fun getMLOutput(mlOutput: MLOutput) {
-        dataSource.read(mlOutput)
-    }
+    fun getMLResults() = dataSource.getMLResults()
 
-    suspend fun sendAlert(mlOutput: MLOutput) {
-        dataSource.send(mlOutput)
-    }
+    fun getMLOutput1() = dataSource.getMLOutput1()
+
+    fun getMLOutput2() = dataSource.getMLOutput2()
+
 }

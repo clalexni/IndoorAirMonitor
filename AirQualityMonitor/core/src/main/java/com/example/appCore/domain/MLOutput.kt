@@ -1,5 +1,5 @@
 package com.example.appCore.domain
 
-data class MLOutput (val output1: Float,
-                     val Output2: Float) {
+data class MLOutput (val output1: Double,
+                     val output2: Double) {
 }
