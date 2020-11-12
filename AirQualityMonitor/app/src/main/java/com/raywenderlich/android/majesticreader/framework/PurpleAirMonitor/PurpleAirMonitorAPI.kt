@@ -1,4 +1,4 @@
-package com.raywenderlich.android.majesticreader.framework
+package com.raywenderlich.android.majesticreader.framework.PurpleAirMonitor
 
 import android.util.Log
 import kotlinx.coroutines.GlobalScope
@@ -11,6 +11,9 @@ import com.example.appCore.data.AirMonitorDataSource
 import com.example.appCore.domain.AirMonitor
 
 class PurpleAirMonitorAPI: AirMonitorDataSource {
+
+    //This is basically in memory while room would move this and that Dao object would
+    //be used instead.
     private var purpleAirMonitor: AirMonitor = AirMonitor("0",0.0,0.0)
 
     override fun getPM2_5() = purpleAirMonitor.pm2_5
@@ -21,6 +24,7 @@ class PurpleAirMonitorAPI: AirMonitorDataSource {
         purpleAirMonitor.ID = id
     }
 
+    //This function needs to have the inside methods used turned into a Utility class.
     override suspend fun updateAirMonitor(): AirMonitor {
         val getRequest = "https://www.purpleair.com/json?show="
         val deviceGetRequest = getRequest + purpleAirMonitor.ID

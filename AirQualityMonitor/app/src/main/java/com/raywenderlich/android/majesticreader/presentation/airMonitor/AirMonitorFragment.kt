@@ -35,19 +35,19 @@ class AirMonitorFragment : Fragment() {
         viewModel = ViewModelProviders.of(this, MajesticViewModelFactory).get(AirMonitorViewModel::class.java)
 
         viewModel.pm2_5.observe(this, Observer<Double> { newName ->
-            pm2_5Item.text = newName.toString()})
+            pm2_5Data.text = newName.toString()})
 
         viewModel.pm10_0.observe(this, Observer<Double> { newName ->
-            pm10_0Item.text = newName.toString()})
+            pm10_0Data.text = newName.toString()})
 
-        setDeviceName.setOnClickListener {
+        setMonitorID.setOnClickListener {
 
-            viewModel.setDeviceName(editDeviceName.text.toString())
-            setDeviceName.text = "Polling"
+            viewModel.setDeviceName(monitorEdit.text.toString())
+            setMonitorID.text = "Polling"
             Toast.makeText(context,"Polling Data", Toast.LENGTH_LONG).show()
         }
 
-        setDeviceNameInfo.setOnClickListener {
+        monitorInfo.setOnClickListener {
 
             val helpText = "Device-ID: A unique code for every sensor the is printed on the sensor sticker or listed in the shipping confirmation email."
 
@@ -62,15 +62,13 @@ class AirMonitorFragment : Fragment() {
 
         pollAirMonitorData()
     }
-
     private fun pollAirMonitorData() {
         val handler = Handler()
 
         val airMonitorPoll = object : Runnable {
             override fun run() {
-                //put code here
                 viewModel.updateAirMonitor()
-                setDeviceName.text = getString(R.string.set_monitor_device_id_button)
+                setMonitorID.text = getString(R.string.set_data)
                 Log.d("timer", "20 secs passed and AirMonitor API is Polled")
                 handler.postDelayed(this, 20000)
             }

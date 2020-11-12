@@ -34,6 +34,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.majesticreader.R
 import com.raywenderlich.android.majesticreader.presentation.airMonitor.AirMonitorFragment
+import com.raywenderlich.android.majesticreader.presentation.weather.WeatherFragment
 
 /*NavigationView.OnNavigationItemSelectedListener, MainActivityDelegate  */
 class MainActivity : AppCompatActivity(){
@@ -46,7 +47,8 @@ class MainActivity : AppCompatActivity(){
     {
       supportFragmentManager
               .beginTransaction()
-              .add(R.id.drawer_layout, AirMonitorFragment.newInstance(), "MonitorList")
+              .add(R.id.fragment_air_monitor, AirMonitorFragment.newInstance(),"AirMonitor")
+              .add(R.id.fragment_weather, WeatherFragment.newInstance(),"Weather")
               .commit()
     }
 

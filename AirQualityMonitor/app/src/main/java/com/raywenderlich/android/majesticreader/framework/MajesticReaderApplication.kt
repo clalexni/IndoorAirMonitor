@@ -31,10 +31,12 @@
 package com.raywenderlich.android.majesticreader.framework
 
 import android.app.Application
-import com.example.appCore.data.AirMonitorRepository
-import com.example.appCore.interactors.*
-import com.raywenderlich.android.majesticreader.data.BookmarkRepository
-import com.raywenderlich.android.majesticreader.data.DocumentRepository
+import com.example.appCore.data.*
+import com.example.appCore.interactors.AirMonitor.*
+import com.example.appCore.interactors.Weather.*
+import com.raywenderlich.android.majesticreader.data.*
+import com.raywenderlich.android.majesticreader.framework.OpenWeather.OpenWeatherAPI
+import com.raywenderlich.android.majesticreader.framework.PurpleAirMonitor.PurpleAirMonitorAPI
 import com.raywenderlich.android.majesticreader.framework.db.InMemoryOpenDocumentDataSource
 import com.raywenderlich.android.majesticreader.interactors.*
 
@@ -49,25 +51,31 @@ class MajesticReaderApplication : Application() {
         InMemoryOpenDocumentDataSource()
     )
     val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
+    val weatherRepository = WeatherRepository(OpenWeatherAPI())
 
     //replace with some dependency injection like Koin.
     MajesticViewModelFactory.inject(
         this,
         Interactors(
-            AddBookmark(bookmarkRepository),
-            GetBookmarks(bookmarkRepository),
-            RemoveBookmark(bookmarkRepository),
+                AddBookmark(bookmarkRepository),
+                GetBookmarks(bookmarkRepository),
+                RemoveBookmark(bookmarkRepository),
 
-            AddDocument(documentRepository),
-            GetDocuments(documentRepository),
-            RemoveDocument(documentRepository),
-            GetOpenDocument(documentRepository),
-            SetOpenDocument(documentRepository),
+                AddDocument(documentRepository),
+                GetDocuments(documentRepository),
+                RemoveDocument(documentRepository),
+                GetOpenDocument(documentRepository),
+                SetOpenDocument(documentRepository),
 
-            UpdateAirMonitor(airMonitorRepository),
-            GetPM2_5(airMonitorRepository),
-            GetPM10_0(airMonitorRepository),
-            SetAirMonitorID(airMonitorRepository)
+                UpdateAirMonitor(airMonitorRepository),
+                GetPM2_5(airMonitorRepository),
+                GetPM10_0(airMonitorRepository),
+                SetAirMonitorID(airMonitorRepository),
+
+                UpdateWeather(weatherRepository),
+                GetHumidity(weatherRepository),
+                GetTemperature(weatherRepository),
+                SetZipCode(weatherRepository)
         )
     )
   }

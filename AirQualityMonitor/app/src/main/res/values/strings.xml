@@ -20,5 +20,6 @@
   <string name="page_navigation_format">Page: %1$d / %2$d</string>
   <string name="page_bookmark_format">Page %1$d</string>
   <string name="bookmarks">Bookmarks</string>
-  <string name="set_monitor_device_id_button">Set ID</string>
+  <string name="set_data">SET</string>
+
 </resources>

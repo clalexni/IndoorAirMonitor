@@ -1,11 +1,12 @@
 package com.example.appCore.data
 
-import com.example.appCore.domain.Weather
-
 class WeatherRepository (private val dataSource: WeatherDataSource) {
 
-    suspend fun getWeather(weather: Weather) {
-        dataSource.read(weather)
-    }
+    suspend fun updateWeather() = dataSource.updateWeather()
 
+    fun getTemp() = dataSource.getTemp()
+
+    fun getHumidity() = dataSource.getHumidity()
+
+    fun setZipCode(zipCode: String) = dataSource.setZipCode(zipCode)
 }
