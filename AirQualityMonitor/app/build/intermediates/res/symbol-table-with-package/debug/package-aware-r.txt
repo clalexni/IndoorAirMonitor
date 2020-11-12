@@ -1308,7 +1308,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id deviceName
 id dialog_button
 id dimensions
 id direct
@@ -1322,7 +1321,6 @@ id drawer_layout
 id easeIn
 id easeInOut
 id easeOut
-id editDeviceName
 id edit_query
 id end
 id end_padder
@@ -1339,6 +1337,8 @@ id filled
 id fixed
 id flip
 id forever
+id fragment_air_monitor
+id fragment_weather
 id ghost_view
 id glide_custom_view_target_tag
 id gone
@@ -1348,6 +1348,8 @@ id group_divider
 id groups
 id home
 id homeAsUp
+id humidityData
+id humidityText
 id icon
 id icon_group
 id ifRoom
@@ -1376,6 +1378,9 @@ id media_actions
 id message
 id middle
 id mini
+id monitorEdit
+id monitorInfo
+id monitorText
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1400,9 +1405,9 @@ id path
 id pathRelative
 id percent
 id pin
-id pm10_0Item
+id pm10_0Data
 id pm10_0text
-id pm2_5Item
+id pm2_5Data
 id pm2_5text
 id position
 id postLayout
@@ -1437,8 +1442,8 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
-id setDeviceName
-id setDeviceNameInfo
+id setMonitorID
+id setZipCode
 id shortcut
 id showCustom
 id showHome
@@ -1482,6 +1487,8 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id temperatureData
+id temperatureText
 id text
 id text2
 id textSpacerNoButtons
@@ -1520,6 +1527,9 @@ id visible
 id withText
 id wrap
 id wrap_content
+id zipCodeEdit
+id zipCodeInfo
+id zipCodeText
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1614,6 +1624,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout weather_fragment
 menu activity_main_drawer
 menu fragment_reader
 mipmap ic_launcher
@@ -1688,7 +1699,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string previous
 string search_menu_title
-string set_monitor_device_id_button
+string set_data
 string status_bar_notification_info_overflow
 string title_activity_main
 style AlertDialog_AppCompat
@@ -1892,6 +1903,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style NormalText
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

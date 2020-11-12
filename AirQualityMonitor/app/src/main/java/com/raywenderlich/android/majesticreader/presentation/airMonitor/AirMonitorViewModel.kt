@@ -3,11 +3,13 @@ package com.raywenderlich.android.majesticreader.presentation.airMonitor
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import kotlinx.coroutines.*
-
 import com.example.appCore.domain.AirMonitor
 import com.raywenderlich.android.majesticreader.framework.Interactors
 import com.raywenderlich.android.majesticreader.framework.MajesticViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class AirMonitorViewModel(application: Application, interactors: Interactors)
     : MajesticViewModel(application, interactors)
@@ -29,11 +31,10 @@ class AirMonitorViewModel(application: Application, interactors: Interactors)
     fun updateAirMonitor()
     {
         GlobalScope.launch {
-
             //Dispatchers.IO is optimized for Network requests.
-            async (Dispatchers.IO){
+            withContext(Dispatchers.IO) {
                 _airMonitor.postValue(interactors.updateAirMonitor())
-            }.await()
+            }
 
             //!! is bad practice.
             _pm2_5.postValue(_airMonitor.value!!.pm2_5)

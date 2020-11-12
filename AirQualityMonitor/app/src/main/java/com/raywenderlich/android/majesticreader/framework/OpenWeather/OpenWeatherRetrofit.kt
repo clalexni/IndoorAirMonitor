@@ -10,7 +10,6 @@ import com.raywenderlich.android.majesticreader.framework.OpenWeather.Model.Open
 
 interface OpenWeatherRetrofit {
 
-    //temp is given in Kelvin must be turned to Celsius.
     @GET("data/2.5/weather")
     fun getWeatherData(
             @Query("zip") zipCode: String,
@@ -20,7 +19,6 @@ interface OpenWeatherRetrofit {
     //An appid 5e6528a80e5479b2d769ef5801c6b122
     companion object{
         operator fun invoke(): OpenWeatherRetrofit{
-
             return Retrofit.Builder()
                     .baseUrl("http://api.openweathermap.org/")
                     .addConverterFactory(GsonConverterFactory.create())

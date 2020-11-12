@@ -1,12 +1,13 @@
 package com.raywenderlich.android.majesticreader.framework.OpenWeather
 
 import android.util.Log
-import com.example.appCore.data.WeatherDataSource
-import com.example.appCore.domain.Weather
-import com.raywenderlich.android.majesticreader.framework.OpenWeather.Model.OpenWeatherModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+import com.example.appCore.data.WeatherDataSource
+import com.example.appCore.domain.Weather
+import com.raywenderlich.android.majesticreader.framework.OpenWeather.Model.OpenWeatherModel
 
 class OpenWeatherAPI: WeatherDataSource {
     private var openWeather = Weather("75035", 0.0,0)
@@ -35,7 +36,11 @@ class OpenWeatherAPI: WeatherDataSource {
                     //instead use OpenWeatherModel? and null check and assign.
                     val body : OpenWeatherModel = response.body()!!
                     openWeather.humidity = body.main.humidity
-                    openWeather.temperature = body.main.temp
+                    val kelvin = body.main.temp
+                    openWeather.temperature = (kelvin - 273.15) * 1.8 + 32 //fahrenheit
+                }
+                else{
+                    Log.e("ERROR", response.errorBody().toString())
                 }
             }
         })
