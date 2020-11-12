@@ -1,4 +1,4 @@
-package com.raywenderlich.android.majesticreader.framework.OpenWeather
+package com.raywenderlich.android.majesticreader.framework.openWeather
 
 import android.util.Log
 import retrofit2.Call
@@ -7,7 +7,7 @@ import retrofit2.Response
 
 import com.example.appCore.data.WeatherDataSource
 import com.example.appCore.domain.Weather
-import com.raywenderlich.android.majesticreader.framework.OpenWeather.Model.OpenWeatherModel
+import com.raywenderlich.android.majesticreader.framework.openWeather.Model.OpenWeatherModel
 import java.text.DecimalFormat
 
 class OpenWeatherAPI: WeatherDataSource {

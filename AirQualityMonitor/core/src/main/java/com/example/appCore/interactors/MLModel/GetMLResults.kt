@@ -1,8 +1,8 @@
 package com.example.appCore.interactors.MLModel
 
-import com.example.appCore.data.MLOutputRepository
+import com.example.appCore.data.MLModelRepository
 
-class GetMLResults (private val mlOutputRepository: MLOutputRepository) {
+class GetMLResults (private val mlModelRepository: MLModelRepository) {
     operator fun invoke() =
-        mlOutputRepository.getMLResults()
+        mlModelRepository.getMLResults()
 }

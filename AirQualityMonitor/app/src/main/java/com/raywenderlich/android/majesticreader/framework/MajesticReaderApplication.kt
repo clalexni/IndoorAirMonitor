@@ -33,10 +33,15 @@ package com.raywenderlich.android.majesticreader.framework
 import android.app.Application
 import com.example.appCore.data.*
 import com.example.appCore.interactors.AirMonitor.*
+import com.example.appCore.interactors.MLModel.GetMLOutput1
+import com.example.appCore.interactors.MLModel.GetMLOutput2
+import com.example.appCore.interactors.MLModel.GetMLResults
+import com.example.appCore.interactors.MLModel.PredictMLResults
 import com.example.appCore.interactors.Weather.*
 import com.raywenderlich.android.majesticreader.data.*
-import com.raywenderlich.android.majesticreader.framework.OpenWeather.OpenWeatherAPI
-import com.raywenderlich.android.majesticreader.framework.PurpleAirMonitor.PurpleAirMonitorAPI
+import com.raywenderlich.android.majesticreader.framework.asthmaMLModel.AsthmaMLModel
+import com.raywenderlich.android.majesticreader.framework.openWeather.OpenWeatherAPI
+import com.raywenderlich.android.majesticreader.framework.purpleAirMonitor.PurpleAirMonitorAPI
 import com.raywenderlich.android.majesticreader.framework.db.InMemoryOpenDocumentDataSource
 import com.raywenderlich.android.majesticreader.interactors.*
 
@@ -52,6 +57,7 @@ class MajesticReaderApplication : Application() {
     )
     val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
     val weatherRepository = WeatherRepository(OpenWeatherAPI())
+    val mlModelRepsitory = MLModelRepository(AsthmaMLModel())
 
     //replace with some dependency injection like Koin.
     MajesticViewModelFactory.inject(
@@ -75,7 +81,12 @@ class MajesticReaderApplication : Application() {
                 UpdateWeather(weatherRepository),
                 GetHumidity(weatherRepository),
                 GetTemperature(weatherRepository),
-                SetZipCode(weatherRepository)
+                SetZipCode(weatherRepository),
+
+                PredictMLResults(mlModelRepsitory),
+                GetMLResults(mlModelRepsitory),
+                GetMLOutput1(mlModelRepsitory),
+                GetMLOutput2(mlModelRepsitory)
         )
     )
   }

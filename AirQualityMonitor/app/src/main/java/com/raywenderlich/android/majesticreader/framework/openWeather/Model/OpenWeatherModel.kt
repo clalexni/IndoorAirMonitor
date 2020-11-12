@@ -1,4 +1,4 @@
-package com.raywenderlich.android.majesticreader.framework.OpenWeather.Model
+package com.raywenderlich.android.majesticreader.framework.openWeather.Model
 
 data class OpenWeatherModel(
         val base: String,

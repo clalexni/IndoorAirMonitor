@@ -1,4 +1,4 @@
-package com.raywenderlich.android.majesticreader.framework.PurpleAirMonitor
+package com.raywenderlich.android.majesticreader.framework.purpleAirMonitor
 
 import android.util.Log
 import kotlinx.coroutines.GlobalScope

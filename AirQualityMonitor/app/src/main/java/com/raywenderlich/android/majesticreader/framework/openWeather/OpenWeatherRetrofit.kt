@@ -1,4 +1,4 @@
-package com.raywenderlich.android.majesticreader.framework.OpenWeather
+package com.raywenderlich.android.majesticreader.framework.openWeather
 
 import retrofit2.Call
 import retrofit2.http.GET
@@ -6,7 +6,7 @@ import retrofit2.http.Query
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-import com.raywenderlich.android.majesticreader.framework.OpenWeather.Model.OpenWeatherModel
+import com.raywenderlich.android.majesticreader.framework.openWeather.Model.OpenWeatherModel
 
 interface OpenWeatherRetrofit {
 
