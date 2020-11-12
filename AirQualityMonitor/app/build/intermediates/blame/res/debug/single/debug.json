@@ -736,6 +736,10 @@
         "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\54b2c32c6e0a5b40c458cd2ce94ef34a\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\res\\merged\\debug\\layout_ml_model_fragment.xml.flat",
+        "source": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\src\\main\\res\\layout\\ml_model_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Huzai\\.gradle\\caches\\transforms-2\\files-2.1\\54b2c32c6e0a5b40c458cd2ce94ef34a\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },

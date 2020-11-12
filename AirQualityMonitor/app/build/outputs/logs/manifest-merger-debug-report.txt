@@ -15,6 +15,7 @@ MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\cache
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ad98148a780368f944ec4a73b0e1c99a\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\139557666870e578f3a82ce2ceb1988f\AndroidManifest.xml:17:1-22:12
+MERGED from [org.tensorflow:tensorflow-lite:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ea8f3e872c8a4987e6ab3ca36143bffb\AndroidManifest.xml:2:1-10:12
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fae7d39375a4e899960cd16982c9d9a0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\562cfc0bbf86a6c8bfb0e7823ae1a9d7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\20d6bcbf11990d205046b6afa86aaa47\AndroidManifest.xml:17:1-22:12
@@ -82,6 +83,8 @@ MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\cache
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fb8e5c9e2f749fd0ff7a703bf58afbde\AndroidManifest.xml:10:5-20
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:22:5-23:19
+MERGED from [org.tensorflow:tensorflow-lite:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ea8f3e872c8a4987e6ab3ca36143bffb\AndroidManifest.xml:8:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ea8f3e872c8a4987e6ab3ca36143bffb\AndroidManifest.xml:8:5-20
 MERGED from [androidx.core:core:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e60ce03faa99229a67c7d420d7e7ab2d\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\e60ce03faa99229a67c7d420d7e7ab2d\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\dcfba31363ba3ae1d6669a41f5221d7f\AndroidManifest.xml:24:5-25:19
@@ -154,6 +157,8 @@ MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.grad
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\9d3a1c5bb7ce544551f32c8bbec7b5c1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\139557666870e578f3a82ce2ceb1988f\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\139557666870e578f3a82ce2ceb1988f\AndroidManifest.xml:20:5-44
+MERGED from [org.tensorflow:tensorflow-lite:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ea8f3e872c8a4987e6ab3ca36143bffb\AndroidManifest.xml:5:5-6:41
+MERGED from [org.tensorflow:tensorflow-lite:2.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\ea8f3e872c8a4987e6ab3ca36143bffb\AndroidManifest.xml:5:5-6:41
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fae7d39375a4e899960cd16982c9d9a0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\fae7d39375a4e899960cd16982c9d9a0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\562cfc0bbf86a6c8bfb0e7823ae1a9d7\AndroidManifest.xml:20:5-44
@@ -231,6 +236,7 @@ INJECTED from C:\Users\Huzai\Desktop\Code\Kotlin\AirMonitorProject\indoor-air-mo
 	android:minSdkVersion
 		INJECTED from C:\Users\Huzai\Desktop\Code\Kotlin\AirMonitorProject\indoor-air-monitor\AirQualityMonitor\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Huzai\Desktop\Code\Kotlin\AirMonitorProject\indoor-air-monitor\AirQualityMonitor\app\src\main\AndroidManifest.xml
+		MERGED from C:\Users\Huzai\Desktop\Code\Kotlin\AirMonitorProject\indoor-air-monitor\AirQualityMonitor\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Huzai\Desktop\Code\Kotlin\AirMonitorProject\indoor-air-monitor\AirQualityMonitor\app\src\main\AndroidManifest.xml
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.1.0] C:\Users\Huzai\.gradle\caches\transforms-2\files-2.1\7c3da5196d8154b3c56089b8ff4d0131\AndroidManifest.xml:25:9-27:40
