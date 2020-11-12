@@ -1338,7 +1338,6 @@ id fixed
 id flip
 id forever
 id fragment_air_monitor
-id fragment_ml_model
 id fragment_weather
 id ghost_view
 id glide_custom_view_target_tag
@@ -1379,8 +1378,6 @@ id media_actions
 id message
 id middle
 id mini
-id mlModelData
-id mlModelText
 id monitorEdit
 id monitorInfo
 id monitorText
@@ -1605,7 +1602,6 @@ layout fragment_reader
 layout item_bookmark
 layout item_data
 layout item_document
-layout ml_model_fragment
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header_main
