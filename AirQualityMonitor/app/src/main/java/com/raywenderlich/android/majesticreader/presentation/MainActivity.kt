@@ -34,7 +34,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.majesticreader.R
 import com.raywenderlich.android.majesticreader.presentation.airMonitor.AirMonitorFragment
-import com.raywenderlich.android.majesticreader.presentation.mlModel.MLModelFragment
 import com.raywenderlich.android.majesticreader.presentation.weather.WeatherFragment
 
 /*NavigationView.OnNavigationItemSelectedListener, MainActivityDelegate  */
@@ -50,8 +49,9 @@ class MainActivity : AppCompatActivity(){
               .beginTransaction()
               .add(R.id.fragment_air_monitor, AirMonitorFragment.newInstance(),"AirMonitor")
               .add(R.id.fragment_weather, WeatherFragment.newInstance(),"Weather")
-              .add(R.id.fragment_ml_model, MLModelFragment.newInstance(), "MLModel")
               .commit()
     }
+
   }
+
 }

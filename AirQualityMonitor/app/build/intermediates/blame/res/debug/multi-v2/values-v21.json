@@ -44,12 +44,12 @@
                 {
                     "source": "C:\\Users\\Huzai\\Desktop\\Code\\Kotlin\\AirMonitorProject\\indoor-air-monitor\\AirQualityMonitor\\app\\src\\main\\res\\values-v21\\styles.xml",
                     "from": {
-                        "startLines": "2",
+                        "startLines": "32",
                         "startColumns": "2",
-                        "startOffsets": "17",
-                        "endLines": "6",
+                        "startOffsets": "1720",
+                        "endLines": "36",
                         "endColumns": "10",
-                        "endOffsets": "230"
+                        "endOffsets": "1933"
                     },
                     "to": {
                         "startLines": "6",

@@ -1,9 +1,9 @@
 package com.example.appCore.interactors
 
-import com.example.appCore.data.MLModelRepository
+import com.example.appCore.data.MLOutputRepository
+import com.example.appCore.domain.MLOutput
 
-//Should this be on front end?
-class SendAlert (private val mlModelRepository: MLModelRepository) {
-    //suspend operator fun invoke(mlModel: MLModel) =
-        //mlOutputRepository.sendAlert(mlModel)
+class SendAlert (private val mlOutputRepository: MLOutputRepository) {
+    suspend operator fun invoke(mlOutput: MLOutput) =
+        mlOutputRepository.sendAlert(mlOutput)
 }
