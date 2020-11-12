@@ -1,5 +1,5 @@
 package com.example.appCore.domain
 
-data class MLModel (val output1: Double,
-                    val output2: Double) {
+data class MLModel (var output1: Double,
+                    var output2: Double) {
 }

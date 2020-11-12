@@ -1,7 +1,14 @@
 package com.raywenderlich.android.majesticreader.framework.asthmaMLModel
 
+import android.content.res.AssetManager
 import com.example.appCore.data.MLModelDataSource
 import com.example.appCore.domain.MLModel
+import com.raywenderlich.android.majesticreader.framework.MajesticViewModelFactory.application
+import org.tensorflow.lite.Interpreter
+import java.io.FileInputStream
+import java.io.IOException
+import java.nio.ByteBuffer
+import java.nio.channels.FileChannel
 
 class AsthmaMLModel: MLModelDataSource {
     private val mlModel = MLModel(0.0,0.0)
@@ -14,6 +21,46 @@ class AsthmaMLModel: MLModelDataSource {
 
     override fun predictMLResults(temperature: Double, humidity: Int, pm2_5: Double, pm10_0: Double) {
 
+        val interpreter = makeInterpreter()
+        val predicted = doInference(interpreter, temperature, humidity, pm2_5, pm10_0)
+        mlModel.output1 = predicted[0].toDouble()
+        mlModel.output2 = predicted[1].toDouble()
     }
+
+    fun makeInterpreter(): Interpreter {
+        var interpreter: Interpreter? = null
+
+        val assetManager = application.assets
+        val model = loadModelFile(assetManager, "Asthma.tflite")
+
+        interpreter = Interpreter(model)
+        return interpreter
+    }
+    @Throws(IOException::class)
+    private fun loadModelFile(assetManager: AssetManager, filename: String): ByteBuffer {
+
+        val fileDescriptor = assetManager.openFd(filename)
+        val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
+        val fileChannel = inputStream.channel
+        val startOffset = fileDescriptor.startOffset
+        val declaredLength = fileDescriptor.declaredLength
+
+        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
+    }
+
+    private fun doInference(interpreter : Interpreter, temperature: Double, humidity: Int, pm2_5: Double, pm10_0: Double): FloatArray{
+        val temp = temperature.toFloat()
+        val hum = humidity.toFloat()
+        val pm2_5 = pm2_5.toFloat()
+        val pm10_0 = pm10_0.toFloat()
+
+        val input = floatArrayOf(temp, hum, pm2_5, pm10_0)
+        val output = floatArrayOf(0.0F, 0.0F)
+
+        interpreter.run(input, output)
+
+        return output
+    }
+
 
 }
