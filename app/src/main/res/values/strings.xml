@@ -13,4 +13,7 @@
     <string name="submit_button">Submit</string>
     <string name="thank_message">Thank you for your feedback!</string>
     <string name="back_to_home_button">Back to Home</string>
+    <string name="questionnaire">Questionnaire</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
 </resources>
