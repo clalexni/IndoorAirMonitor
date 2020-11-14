@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
             // Close this activity
             finish()
 
-        }, 1000)
+        }, 2000)
     }
 
     private fun makeFullScreen() {
