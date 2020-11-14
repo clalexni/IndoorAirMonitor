@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Indoor Air Monitor</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="temp">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="pm25">PM 2.5</string>
+    <string name="pm10">PM 10</string>
+    <string name="pefr">PEFR</string>
+    <string name="fetch_button">Fetch</string>
+    <string name="predict_button">Predict</string>
+
+    <string name="submit_button">Submit</string>
+    <string name="thank_message">Thank you for your feedback!</string>
+    <string name="back_to_home_button">Back to Home</string>
+</resources>
