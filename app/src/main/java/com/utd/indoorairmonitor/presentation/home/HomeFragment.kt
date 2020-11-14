@@ -11,10 +11,8 @@ import com.utd.indoorairmonitor.R
 class HomeFragment : Fragment() {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,savedInstanceState: Bundle?): View? {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Home"
         // Inflate the layout for this fragment
