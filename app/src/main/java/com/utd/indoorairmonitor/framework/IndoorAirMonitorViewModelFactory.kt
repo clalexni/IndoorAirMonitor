@@ -22,7 +22,7 @@ object IndoorAirMonitorViewModelFactory : ViewModelProvider.Factory {
               application,
               dependencies)
     } else {
-      throw IllegalStateException("ViewModel must extend MajesticViewModel")
+      throw IllegalStateException("ViewModel must extend IndoorAirMonitorViewModel")
     }
   }
 
