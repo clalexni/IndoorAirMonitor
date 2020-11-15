@@ -1,4 +1,4 @@
-package com.utd.indoorairmonitor.presentation.mlModel
+package com.utd.indoorairmonitor.presentation.home
 
 import android.app.Application
 import androidx.lifecycle.LiveData

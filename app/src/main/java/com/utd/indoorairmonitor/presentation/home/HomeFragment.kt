@@ -7,12 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.utd.indoorairmonitor.R
 import com.utd.indoorairmonitor.framework.IndoorAirMonitorViewModelFactory
-import com.utd.indoorairmonitor.presentation.airMonitor.AirMonitorViewModel
-import com.utd.indoorairmonitor.presentation.mlModel.MLModelViewModel
-import com.utd.indoorairmonitor.presentation.weather.WeatherViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -22,9 +19,9 @@ class HomeFragment : Fragment() {
     }
 
     // view models
-    private lateinit var mlVM: MLModelViewModel
-    private lateinit var weatherVM: WeatherViewModel
-    private lateinit var airMonitorVM: AirMonitorViewModel
+    //private lateinit var mlVM: MLModelViewModel
+    //private lateinit var weatherVM: WeatherViewModel
+    //private lateinit var airMonitorVM: AirMonitorViewModel
 
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -81,10 +78,10 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         // init the view models
-//        mlVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(MLModelViewModel::class.java)
-//        airMonitorVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(AirMonitorViewModel::class.java)
-//        weatherVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(WeatherViewModel::class.java)
-//
+        //mlVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(MLModelViewModel::class.java)
+        //airMonitorVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(AirMonitorViewModel::class.java)
+        // weatherVM = ViewModelProvider(this).get(WeatherViewModel::class.java)
+
 
     }
 

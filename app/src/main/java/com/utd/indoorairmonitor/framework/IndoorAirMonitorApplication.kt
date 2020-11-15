@@ -19,7 +19,7 @@ class IndoorAirMonitorApplication : Application() {
       val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
       val weatherRepository = WeatherRepository(OpenWeatherAPI())
       val mlModelRepository = MLModelRepository(AsthmaMLModel())
-      //TODO test ml model
+
       IndoorAirMonitorViewModelFactory.inject(this,
           Interactors(
               UpdateAirMonitor(airMonitorRepository),
