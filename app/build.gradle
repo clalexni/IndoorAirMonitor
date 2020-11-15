@@ -7,6 +7,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    aaptOptions {
+        noCompress "tflite"
+    }
+
     defaultConfig {
         applicationId "com.utd.indoorairmonitor"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -53,4 +57,7 @@ dependencies {
     //navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
+
+    //TFModel
+    implementation 'org.tensorflow:tensorflow-lite:2.0.0'
 }
