@@ -1,5 +1,6 @@
 package com.utd.indoorairmonitor.presentation.home
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,9 +13,9 @@ import com.utd.indoorairmonitor.framework.IndoorAirMonitorViewModelFactory
 import com.utd.indoorairmonitor.presentation.airMonitor.AirMonitorViewModel
 import com.utd.indoorairmonitor.presentation.mlModel.MLModelViewModel
 import com.utd.indoorairmonitor.presentation.weather.WeatherViewModel
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
-
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -28,8 +29,47 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,savedInstanceState: Bundle?): View? {
-        // set title
+        // set fragment title
         (activity as AppCompatActivity).supportActionBar?.title = "Home"
+
+        // set listeners
+//        zip_info_image.setOnClickListener {
+//
+//            val helpText = "Put your zip code here in order to get local weather data."
+//
+//            val dialogBuilder = AlertDialog.Builder(context)
+//            dialogBuilder.setMessage(helpText)
+//
+//            val alert = dialogBuilder.create()
+//            alert.setTitle("Zip Code Info")
+//
+//            alert.show()
+//        }
+//        monitorId_info_image.setOnClickListener {
+//
+//            val helpText = "Device-ID: A unique code for every sensor the is printed on the sensor sticker or listed in the shipping confirmation email."
+//
+//            val dialogBuilder = AlertDialog.Builder(context)
+//            dialogBuilder.setMessage(helpText)
+//
+//            val alert = dialogBuilder.create()
+//            alert.setTitle("Device ID Info")
+//
+//            alert.show()
+//        }
+//
+//        pefr_info_image.setOnClickListener {
+//
+//            val helpText = "PEFR: peak expiratory flow rate. Enter your measurement from your peak flow device."
+//
+//            val dialogBuilder = AlertDialog.Builder(context)
+//            dialogBuilder.setMessage(helpText)
+//
+//            val alert = dialogBuilder.create()
+//            alert.setTitle("PEFR Info")
+//
+//            alert.show()
+//        }
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -41,10 +81,10 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         // init the view models
-        mlVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(MLModelViewModel::class.java)
-        airMonitorVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(AirMonitorViewModel::class.java)
-        weatherVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(WeatherViewModel::class.java)
-
+//        mlVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(MLModelViewModel::class.java)
+//        airMonitorVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(AirMonitorViewModel::class.java)
+//        weatherVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(WeatherViewModel::class.java)
+//
 
     }
 
