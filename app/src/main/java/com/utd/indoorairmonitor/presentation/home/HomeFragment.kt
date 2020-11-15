@@ -45,8 +45,6 @@ class HomeFragment : Fragment() {
         airMonitorVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(AirMonitorViewModel::class.java)
         weatherVM = ViewModelProviders.of(this, IndoorAirMonitorViewModelFactory).get(WeatherViewModel::class.java)
 
-        mlVM.
-
 
     }
 
