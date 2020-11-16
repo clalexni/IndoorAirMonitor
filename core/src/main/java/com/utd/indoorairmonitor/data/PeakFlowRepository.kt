@@ -4,8 +4,7 @@ import com.utd.indoorairmonitor.domain.PeakFlow
 
 class PeakFlowRepository(private val dataSource: PeakFlowDataSource) {
 
-    suspend fun getPeakFlow(peakFlow: PeakFlow) {
-        dataSource.read(peakFlow)
-    }
+    suspend fun getPeakFlow() = dataSource.getPeakFlow()
+    suspend fun setPeakFlow(peakFlow: Double) = dataSource.setPeakFlow(peakFlow)
 
 }

@@ -7,12 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.utd.indoorairmonitor.R
 import com.utd.indoorairmonitor.databinding.FragmentHomeBinding
 import com.utd.indoorairmonitor.framework.IndoorAirMonitorViewModelFactory
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_questionaire.*
 
 class HomeFragment : Fragment() {
     companion object {
@@ -32,15 +35,24 @@ class HomeFragment : Fragment() {
             inflater, R.layout.fragment_home, container, false
         )
 
-        Log.i("HomeFragment", "Called ViewModelProvider.get")
+        // get view model from provider
+        viewModel = ViewModelProvider(this, IndoorAirMonitorViewModelFactory).get(HomeViewModel::class.java)
+
+        // set onClick listeners
+        fetch_button.setOnClickListener {
+            viewModel.setDeviceName(monitorId_edit.text.toString())
+            viewModel.setZipCode(zip_edit.text.toString())
+
+
+            Toast.makeText(context,"Fetching Data...", Toast.LENGTH_LONG).show()
+        }
+
+        submitButton.setOnClickListener {
+
+        }
+
 
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this, IndoorAirMonitorViewModelFactory).get(HomeViewModel::class.java)
     }
 
 

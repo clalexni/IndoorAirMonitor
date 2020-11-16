@@ -1,11 +1,9 @@
 package com.utd.indoorairmonitor.domain
 
-import java.time.LocalDateTime
-
 
 data class DataStore(val airMonitor: AirMonitor,
                      val peakFlow: PeakFlow,
-                     val questionnaire: Questionnaire,
+                     val questionnaire: QuestionnaireAnswer,
                      val weather: Weather) {
 
     //wasn't working because it requires API 26 and above

@@ -15,12 +15,12 @@ import com.utd.indoorairmonitor.interactors.*
 
 class IndoorAirMonitorApplication : Application() {
     override fun onCreate() {
-        Log.i("test", "before on created")
+        //Log.i("test", "before on created")
 
         val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
         val weatherRepository = WeatherRepository(OpenWeatherAPI())
         val mlModelRepository = MLModelRepository(AsthmaMLModel())
-        Log.i("test", "created")
+
         IndoorAirMonitorViewModelFactory.inject(this,
             Interactors(
                 UpdateAirMonitor(airMonitorRepository),
