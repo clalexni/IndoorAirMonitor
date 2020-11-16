@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.SpannableStringBuilder
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,9 +22,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_questionaire.*
 
 class HomeFragment : Fragment() {
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
@@ -42,7 +40,7 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this, IndoorAirMonitorViewModelFactory).get(HomeViewModel::class.java)
 
         // set onClick listeners
-        fetch_button.setOnClickListener {
+        binding.fetchButton.setOnClickListener {
             viewModel.setDeviceName(monitorId_edit.text.toString())
             viewModel.setZipCode(zip_edit.text.toString())
             viewModel.setPeakFlow(pefr_edit.text.toString().toDouble())
@@ -53,21 +51,21 @@ class HomeFragment : Fragment() {
             pollAirMonitorData()
         }
 
-//        submitButton.setOnClickListener {
-//            pollMLModel()
-//            Toast.makeText(context,viewModel.output1.toString(), Toast.LENGTH_LONG).show()
-//        }
+        binding.predictButton.setOnClickListener {
+            pollMLModel()
+            Toast.makeText(context,"ok...", Toast.LENGTH_LONG).show()
+        }
 
         // observe value changes for the private data field of the view model
         // reflect the change on view
         viewModel.pm2_5.observe(viewLifecycleOwner, Observer<Double> { newName ->
-            pm25_text.text = newName.toString()})
+            pm25_edit.setText(newName.toString()) })
         viewModel.pm10_0.observe(viewLifecycleOwner, Observer<Double> { newName ->
-            pm25_text.text = newName.toString()})
-//        viewModel.temperature.observe(viewLifecycleOwner, Observer<Double> { newName ->
-//            temp_edit.text = newName.toString()})
-//        viewModel.humidity.observe(viewLifecycleOwner, Observer<Int> { newName ->
-//            hum_edit.text = newName.toString()})
+            pm10_edit.setText(newName.toString())})
+        viewModel.temperature.observe(viewLifecycleOwner, Observer<Double> { newName ->
+            temp_edit.setText(newName.toString())})
+        viewModel.humidity.observe(viewLifecycleOwner, Observer<Int> { newName ->
+            hum_edit.setText(newName.toString())})
 
 
         return binding.root

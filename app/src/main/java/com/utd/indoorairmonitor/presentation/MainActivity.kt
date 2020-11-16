@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
 
-        supportFragmentManager .beginTransaction().add(R.id.homeFragment, HomeFragment.newInstance(),"AirMonitor")
+        //supportFragmentManager .beginTransaction().add(R.id.homeFragment, HomeFragment.newInstance(),"AirMonitor")
     }
 
     override fun onSupportNavigateUp(): Boolean {
