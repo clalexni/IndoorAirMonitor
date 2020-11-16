@@ -10,10 +10,7 @@ import com.utd.indoorairmonitor.domain.Weather
 
 import com.utd.indoorairmonitor.framework.Interactors
 import com.utd.indoorairmonitor.framework.IndoorAirMonitorViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 
 class HomeViewModel(application: Application, interactors: Interactors):
@@ -75,10 +72,24 @@ class HomeViewModel(application: Application, interactors: Interactors):
             withContext(Dispatchers.IO) {
                 _airMonitor.postValue(interactors.updateAirMonitor())
             }
-
+            delay(2000)
             //!! is bad practice.
             _pm2_5.postValue(_airMonitor.value!!.pm2_5)
             _pm10_0.postValue(_airMonitor.value!!.pm10_0)
+        }
+    }
+    // weather related functions
+    fun setZipCode(zipCode: String) = interactors.setZipCode(zipCode)
+
+    fun updateWeather() {
+        GlobalScope.launch {
+            withContext(Dispatchers.IO) {
+                _weather.postValue(interactors.updateWeather())
+            }
+            delay(2000)
+
+            _humidity.postValue(_weather.value!!.humidity)
+            _temperature.postValue(_weather.value!!.temperature)
         }
     }
 
@@ -95,18 +106,5 @@ class HomeViewModel(application: Application, interactors: Interactors):
         _output2.postValue(interactors.getMLOutput2())
     }
 
-    // weather related functions
-    fun setZipCode(zipCode: String) = interactors.setZipCode(zipCode)
-
-    fun updateWeather() {
-        GlobalScope.launch {
-            withContext(Dispatchers.IO) {
-                _weather.postValue(interactors.updateWeather())
-            }
-
-            _humidity.postValue(_weather.value!!.humidity)
-            _temperature.postValue(_weather.value!!.temperature)
-        }
-    }
 
 }
