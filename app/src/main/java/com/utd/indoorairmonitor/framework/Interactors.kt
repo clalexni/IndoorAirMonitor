@@ -3,6 +3,8 @@ package com.utd.indoorairmonitor.framework
 import com.utd.indoorairmonitor.interactors.airMonitor.*
 import com.utd.indoorairmonitor.interactors.mlModel.*
 import com.utd.indoorairmonitor.interactors.weather.*
+import com.utd.indoorairmonitor.interactors.questionnaire.*
+import com.utd.indoorairmonitor.interactors.peakFlow.*
 
 data class Interactors(
         //Air Monitor Use cases
@@ -21,5 +23,14 @@ data class Interactors(
         val predictMLResults: PredictMLResults,
         val getMLResults: GetMLResults,
         val getMLOutput1: GetMLOutput1,
-        val getMLOutput2: GetMLOutput2
+        val getMLOutput2: GetMLOutput2,
+
+        // peak flow use case
+        val getPeakFlow: GetPeakFlow,
+        val setPeakFlow: SetPeakFlow,
+
+        // questionnaire use case
+        val getQuestionnaireAnswer: GetQuestionnaireAnswer,
+        val setQuestinonnaireAnswer: SetQuestinonnaireAnswer
+
 )

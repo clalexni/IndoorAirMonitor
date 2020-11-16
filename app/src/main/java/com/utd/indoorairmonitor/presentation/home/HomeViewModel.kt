@@ -63,7 +63,7 @@ class HomeViewModel(application: Application, interactors: Interactors):
         get() = _weather
 
     // peak flow meter setter
-
+    fun setPeakFlow(pefr: Double) = interactors.setPeakFlow(pefr)
 
     // air monitor related functions
     fun setDeviceName(name: String) = interactors.setAirMonitorID(name)

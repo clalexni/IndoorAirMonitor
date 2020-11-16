@@ -7,11 +7,11 @@ class PeakFlowDataSourceImp: PeakFlowDataSource {
 
     private var pf: PeakFlow = PeakFlow(0.0)
 
-    override suspend fun getPeakFlow(): Double {
+    override fun getPeakFlow(): Double {
         return pf.peakFlow
     }
 
-    override suspend fun setPeakFlow(peakFlow: Double) {
+    override fun setPeakFlow(peakFlow: Double) {
         pf.peakFlow = peakFlow
     }
 
