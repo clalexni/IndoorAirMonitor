@@ -17,10 +17,13 @@ object IndoorAirMonitorViewModelFactory : ViewModelProvider.Factory {
 
   override fun <T : ViewModel?> create(modelClass: Class<T>): T {
     if(IndoorAirMonitorViewModel::class.java.isAssignableFrom(modelClass)) {
+      //val x = this::application.isInitialized
+
       return modelClass.getConstructor(Application::class.java, Interactors::class.java)
-          .newInstance(
-              application,
-              dependencies)
+        .newInstance(
+          application,
+          dependencies)
+      //return modelClass(application, dependencies)
     } else {
       throw IllegalStateException("ViewModel must extend IndoorAirMonitorViewModel")
     }

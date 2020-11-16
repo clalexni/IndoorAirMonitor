@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        @Suppress("UNUSED_VARIABLE")
+        //@Suppress("UNUSED_VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
                 R.layout.activity_main)
 
@@ -28,13 +28,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
 
-//        if (savedInstanceState == null)
-//        {
-//            supportFragmentManager
-//                .beginTransaction()
-//                .add(R.id.homeFragment, HomeFragment.newInstance())
-//                .commit()
-//        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

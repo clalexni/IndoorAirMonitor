@@ -1,6 +1,7 @@
 package com.utd.indoorairmonitor.framework
 
 import android.app.Application
+import android.util.Log
 import com.utd.indoorairmonitor.data.*
 import com.utd.indoorairmonitor.interactors.airMonitor.*
 import com.utd.indoorairmonitor.interactors.mlModel.*
@@ -13,31 +14,34 @@ import com.utd.indoorairmonitor.framework.purpleAirMonitor.PurpleAirMonitorAPI
 import com.utd.indoorairmonitor.interactors.*
 
 class IndoorAirMonitorApplication : Application() {
+    override fun onCreate() {
+        Log.i("test", "before on created")
 
-  override fun onCreate() {
-      super.onCreate()
-      val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
-      val weatherRepository = WeatherRepository(OpenWeatherAPI())
-      val mlModelRepository = MLModelRepository(AsthmaMLModel())
+        val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
+        val weatherRepository = WeatherRepository(OpenWeatherAPI())
+        val mlModelRepository = MLModelRepository(AsthmaMLModel())
+        Log.i("test", "created")
+        IndoorAirMonitorViewModelFactory.inject(this,
+            Interactors(
+                UpdateAirMonitor(airMonitorRepository),
+                GetPM2_5(airMonitorRepository),
+                GetPM10_0(airMonitorRepository),
+                SetAirMonitorID(airMonitorRepository),
 
-      IndoorAirMonitorViewModelFactory.inject(this,
-          Interactors(
-              UpdateAirMonitor(airMonitorRepository),
-              GetPM2_5(airMonitorRepository),
-              GetPM10_0(airMonitorRepository),
-              SetAirMonitorID(airMonitorRepository),
+                UpdateWeather(weatherRepository),
+                GetHumidity(weatherRepository),
+                GetTemperature(weatherRepository),
+                SetZipCode(weatherRepository),
 
-              UpdateWeather(weatherRepository),
-              GetHumidity(weatherRepository),
-              GetTemperature(weatherRepository),
-              SetZipCode(weatherRepository),
+                PredictMLResults(mlModelRepository),
+                GetMLResults(mlModelRepository),
+                GetMLOutput1(mlModelRepository),
+                GetMLOutput2(mlModelRepository)
+            )
+        )
+        super.onCreate()
 
-              PredictMLResults(mlModelRepository),
-              GetMLResults(mlModelRepository),
-              GetMLOutput1(mlModelRepository),
-              GetMLOutput2(mlModelRepository)
-          )
-      )
-  }
+    }
+
 
 }
