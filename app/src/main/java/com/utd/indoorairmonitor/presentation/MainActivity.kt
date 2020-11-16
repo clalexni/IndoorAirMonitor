@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.utd.indoorairmonitor.R
 import com.utd.indoorairmonitor.databinding.ActivityMainBinding
+import com.utd.indoorairmonitor.presentation.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,15 +16,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        @Suppress("UNUSED_VARIABLE")
+        //@Suppress("UNUSED_VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
                 R.layout.activity_main)
 
+        // navigation drawer binding
         drawerLayout = binding.drawerLayout
 
+        // let navigation controller controls drawer navigation and action bar navigation
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+        //supportFragmentManager .beginTransaction().add(R.id.homeFragment, HomeFragment.newInstance(),"AirMonitor")
     }
 
     override fun onSupportNavigateUp(): Boolean {

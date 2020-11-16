@@ -1,199 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
+   <layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.home.HomeFragment">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.home.HomeFragment">
 
+        <EditText
+            android:id="@+id/temp_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/sample_temperature"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/temp_text"
+            app:layout_constraintStart_toStartOf="@+id/hum_edit" />
 
-    <EditText
-        android:id="@+id/temp_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="80"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/temp_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temp_text" />
+        <TextView
+            android:id="@+id/temp_text"
+            style="@style/text_box_style"
+            android:layout_marginStart="30dp"
+            android:text="@string/temp"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/hum_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/temp_text"
-        style="@style/text_box_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/temp"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/hum_text"
-        app:layout_constraintEnd_toStartOf="@id/temp_edit"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <TextView
+            android:id="@+id/hum_text"
+            style="@style/text_box_style"
+            android:text="@string/humidity"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/pm25_text"
+            app:layout_constraintStart_toStartOf="@+id/temp_text"
+            app:layout_constraintTop_toBottomOf="@+id/temp_text" />
 
-    <TextView
-        android:id="@+id/hum_text"
-        style="@style/text_box_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/humidity"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/pm25_text"
-        app:layout_constraintEnd_toEndOf="@+id/temp_text"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temp_text" />
+        <TextView
+            android:id="@+id/pm25_text"
+            style="@style/text_box_style"
+            android:text="@string/pm25"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@+id/pm10_text"
+            app:layout_constraintStart_toStartOf="@+id/hum_text"
+            app:layout_constraintTop_toBottomOf="@+id/hum_text" />
 
-    <TextView
-        android:id="@+id/pm25_text"
-        style="@style/text_box_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/pm25"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toTopOf="@+id/pm10_text"
-        app:layout_constraintEnd_toEndOf="@+id/hum_text"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hum_text" />
+        <TextView
+            android:id="@+id/pm10_text"
+            style="@style/text_box_style"
+            android:text="@string/pm10"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/pefr_text"
+            app:layout_constraintStart_toStartOf="@+id/pm25_text"
+            app:layout_constraintTop_toBottomOf="@+id/pm25_text" />
 
-    <TextView
-        android:id="@+id/pm10_text"
-        style="@style/text_box_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/pm10"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/pefr_text"
-        app:layout_constraintEnd_toEndOf="@+id/pm25_text"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pm25_text" />
+        <TextView
+            android:id="@+id/pefr_text"
+            style="@style/text_box_style"
+            android:text="@string/pefr"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/monitorId_text"
+            app:layout_constraintStart_toStartOf="@+id/pm10_text"
+            app:layout_constraintTop_toBottomOf="@+id/pm10_text" />
 
-    <TextView
-        android:id="@+id/pefr_text"
-        style="@style/text_box_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="200dp"
-        android:text="@string/pefr"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/fetch_button"
-        app:layout_constraintEnd_toEndOf="@+id/pm25_text"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pm10_text" />
+        <EditText
+            android:id="@+id/hum_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/sample_humidity"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/pm25_edit"
+            app:layout_constraintStart_toStartOf="@+id/pm25_edit"
+            app:layout_constraintTop_toBottomOf="@+id/temp_edit" />
 
-    <EditText
-        android:id="@+id/hum_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="50"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/hum_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/temp_edit" />
+        <EditText
+            android:id="@+id/pm25_edit"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/sample_pm25"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/pm10_edit"
+            app:layout_constraintStart_toStartOf="@+id/pm10_edit"
+            app:layout_constraintTop_toBottomOf="@+id/hum_edit" />
 
-    <EditText
-        android:id="@+id/pm25_edit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="2.20"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pm25_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/temp_edit" />
+        <EditText
+            android:id="@+id/pm10_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/sample_pm10"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/pefr_edit"
+            app:layout_constraintStart_toStartOf="@+id/pefr_edit"
+            app:layout_constraintTop_toBottomOf="@+id/pm25_edit" />
 
-    <EditText
-        android:id="@+id/pm10_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="9.20"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pm10_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toEndOf="@+id/pm10_text" />
+        <EditText
+            android:id="@+id/pefr_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/sample_pefr"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/monitorId_edit"
+            app:layout_constraintStart_toStartOf="@+id/monitorId_edit"
+            app:layout_constraintTop_toBottomOf="@+id/pm10_edit" />
 
-    <EditText
-        android:id="@+id/pefr_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="260"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pefr_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/pm25_edit" />
+        <Button
+            android:id="@+id/fetch_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="@string/fetch_button"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/zip_text"
+            app:layout_constraintTop_toBottomOf="@+id/zip_text" />
 
-    <Button
-        android:id="@+id/fetch_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/fetch_button"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/predict_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pefr_text" />
+        <Button
+            android:id="@+id/predict_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/predict_button"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fetch_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fetch_button" />
 
-    <Button
-        android:id="@+id/predict_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/predict_button"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fetch_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/fetch_button"
-        app:layout_constraintTop_toTopOf="@+id/fetch_button" />
+        <ImageView
+            android:id="@+id/pefr_info_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_info_details"
+            app:layout_constraintBottom_toBottomOf="@+id/pefr_text"
+            app:layout_constraintEnd_toStartOf="@+id/pefr_edit"
+            app:layout_constraintTop_toTopOf="@+id/pefr_text"
+            app:layout_constraintVertical_bias="1.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/zip_info_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_info_details"
+            app:layout_constraintBottom_toBottomOf="@+id/zip_text"
+            app:layout_constraintEnd_toStartOf="@+id/monitorId_edit"
+            app:layout_constraintTop_toTopOf="@+id/zip_text" />
+
+        <ImageView
+            android:id="@+id/monitorId_info_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_info_details"
+            app:layout_constraintBottom_toBottomOf="@+id/monitorId_text"
+            app:layout_constraintEnd_toStartOf="@+id/monitorId_edit"
+            app:layout_constraintTop_toTopOf="@+id/monitorId_text" />
+
+        <TextView
+            android:id="@+id/monitorId_text"
+            style="@style/text_box_style"
+            android:text="@string/monitor_id"
+            app:layout_constraintBottom_toTopOf="@+id/zip_text"
+            app:layout_constraintStart_toStartOf="@+id/pefr_text"
+            app:layout_constraintTop_toBottomOf="@+id/pefr_text" />
+
+        <TextView
+            android:id="@+id/zip_text"
+            style="@style/text_box_style"
+            android:layout_marginBottom="50dp"
+            android:text="@string/zip_code"
+            app:layout_constraintBottom_toTopOf="@+id/fetch_button"
+            app:layout_constraintStart_toStartOf="@+id/monitorId_text"
+            app:layout_constraintTop_toBottomOf="@+id/monitorId_text" />
+
+        <EditText
+            android:id="@+id/monitorId_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/sample_monitor_id"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/zip_edit"
+            app:layout_constraintStart_toStartOf="@+id/zip_edit"
+            app:layout_constraintTop_toBottomOf="@+id/pefr_edit" />
+
+        <EditText
+            android:id="@+id/zip_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="50dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/sample_zip"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/predict_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monitorId_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

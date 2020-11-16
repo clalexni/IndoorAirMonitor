@@ -1,59 +1,60 @@
-/*
- * Copyright (c) 2019 Razeware LLC
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
- * distribute, sublicense, create a derivative work, and/or sell copies of the
- * Software in any work that is designed, intended, or marketed for pedagogical or
- * instructional purposes related to programming, coding, application development,
- * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works,
- * or sale is expressly withheld.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
 package com.utd.indoorairmonitor.framework
 
 import android.app.Application
-import com.utd.indoorairmonitor.data.AirQualityRepository
-import com.utd.indoorairmonitor.data.MLOutputRepository
-import com.utd.indoorairmonitor.interactors.*
+import android.util.Log
+import com.utd.indoorairmonitor.data.*
+import com.utd.indoorairmonitor.interactors.airMonitor.*
+import com.utd.indoorairmonitor.interactors.mlModel.*
+import com.utd.indoorairmonitor.interactors.weather.*
+
+import com.utd.indoorairmonitor.framework.asthmaMLModel.AsthmaMLModel
+import com.utd.indoorairmonitor.framework.openWeather.OpenWeatherAPI
+import com.utd.indoorairmonitor.framework.purpleAirMonitor.PurpleAirMonitorAPI
+import com.utd.indoorairmonitor.framework.peakflow.PeakFlowDataSourceImp
+import com.utd.indoorairmonitor.framework.questionnaire.QuestionnaireAnswerDataSourceImp
+import com.utd.indoorairmonitor.interactors.peakFlow.GetPeakFlow
+import com.utd.indoorairmonitor.interactors.peakFlow.SetPeakFlow
+import com.utd.indoorairmonitor.interactors.questionnaire.GetQuestionnaireAnswer
+import com.utd.indoorairmonitor.interactors.questionnaire.SetQuestinonnaireAnswer
 
 class IndoorAirMonitorApplication : Application() {
+    override fun onCreate() {
+        //Log.i("test", "before on created")
 
-  override fun onCreate() {
-    super.onCreate()
+        val airMonitorRepository = AirMonitorRepository(PurpleAirMonitorAPI())
+        val weatherRepository = WeatherRepository(OpenWeatherAPI())
+        val mlModelRepository = MLModelRepository(AsthmaMLModel())
 
-    val airQualityRepository = AirQualityRepository(AirQualityDataSourceImpl())
-    val mlOutputRepository = MLOutputRepository(MLOutputDataSourceImpl())
+        val peakFlowRepository = PeakFlowRepository(PeakFlowDataSourceImp())
+        val questionnaireAnswerRepository
+                = QuestionnaireAnswerRepository(QuestionnaireAnswerDataSourceImp())
 
-    IndoorAirMonitorViewModelFactory.inject(
-        this,
-        Interactors(
-            ReadAirQuality(airQualityRepository),
-            ReadPM2_5(airQualityRepository),
-            ReadPM10_0(airQualityRepository),
-            SetMonitorDeviceName(airQualityRepository),
-            GetMLOutput(mlOutputRepository),
-            SetDummyMLOutput(mlOutputRepository)
+        IndoorAirMonitorViewModelFactory.inject(this,
+                Interactors(
+                        UpdateAirMonitor(airMonitorRepository),
+                        GetPM2_5(airMonitorRepository),
+                        GetPM10_0(airMonitorRepository),
+                        SetAirMonitorID(airMonitorRepository),
+
+                        UpdateWeather(weatherRepository),
+                        GetHumidity(weatherRepository),
+                        GetTemperature(weatherRepository),
+                        SetZipCode(weatherRepository),
+
+                        PredictMLResults(mlModelRepository),
+                        GetMLResults(mlModelRepository),
+                        GetMLOutput1(mlModelRepository),
+                        GetMLOutput2(mlModelRepository),
+
+                        GetPeakFlow(peakFlowRepository),
+                        SetPeakFlow(peakFlowRepository),
+
+                        GetQuestionnaireAnswer(questionnaireAnswerRepository),
+                        SetQuestinonnaireAnswer(questionnaireAnswerRepository)
+                )
         )
-    )
-  }
+        super.onCreate()
+
+    }
 
 }

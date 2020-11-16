@@ -4,14 +4,18 @@
 - Deep Cleaning:
   - <s>Clean up and refactoring</s>
   - <s>Fix dependency</s>
+
+- Core and framework
+  - <s> add peakflow and questionnaire stuff </s>
   
 - Presentation
   - <s>navigation</s>
   - <s>questionnaire</s>
-  - home page logic and layout
+  - <s>home fragment layout</s>
+  - <s> questionnaire layout</s>
   - setting
   - notification integration
-
-- Framework
-  - viewmodel(s)
+  - <s>home view model</s>
+    - could improve though
+  - questionnaire view model
   

@@ -7,7 +7,7 @@
     <string name="pm25">PM 2.5</string>
     <string name="pm10">PM 10</string>
     <string name="pefr">PEFR</string>
-    <string name="fetch_button">Fetch</string>
+    <string name="fetch_button">Refresh</string>
     <string name="predict_button">Predict</string>
 
     <string name="submit_button">Submit</string>
@@ -16,4 +16,15 @@
     <string name="questionnaire">Questionnaire</string>
     <string name="home">Home</string>
     <string name="setting">Setting</string>
+    <string name="sample_zip">75206</string>
+    <string name="sample_monitor_id">27</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="monitor_id">Monitor ID</string>
+    <string name="sample_pefr">260</string>
+    <string name="sample_pm10">9.20</string>
+    <string name="sample_pm25">2.20</string>
+    <string name="sample_humidity">50</string>
+    <string name="sample_temperature">75</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
