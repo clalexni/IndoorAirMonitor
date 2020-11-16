@@ -98,42 +98,42 @@ class HomeFragment : Fragment() {
     private fun pollWeatherData() {
         //handler depreciated
         //val handler = Handler()
-        viewModel.updateWeather()
-//        val weatherPoll = object : Runnable {
-//            override fun run() {
-//                //put code here
-//                viewModel.updateWeather()
-//                Log.d("timer", "20 secs passed and AirMonitor API is Polled")
-//                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
-//            }
-//        }
-//        Handler(Looper.getMainLooper()).postDelayed(weatherPoll, 0)
+        //viewModel.updateWeather()
+        val weatherPoll = object : Runnable {
+            override fun run() {
+                //put code here
+                viewModel.updateWeather()
+                Log.d("timer", "20 secs passed and AirMonitor API is Polled")
+                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
+            }
+        }
+        Handler(Looper.getMainLooper()).postDelayed(weatherPoll, 0)
     }
     private fun pollAirMonitorData() {
         //handler depreciated
         //val handler = Handler()
-        viewModel.updateAirMonitor()
-//        val airMonitorPoll = object : Runnable {
-//            override fun run() {
-//                viewModel.updateAirMonitor()
-//                Log.d("timer", "20 secs passed and AirMonitor API is Polled")
-//                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
-//            }
-//        }
-//
-//        Handler(Looper.getMainLooper()).postDelayed(airMonitorPoll, 0)
+        //viewModel.updateAirMonitor()
+        val airMonitorPoll = object : Runnable {
+            override fun run() {
+                viewModel.updateAirMonitor()
+                Log.d("timer", "20 secs passed and AirMonitor API is Polled")
+                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
+            }
+        }
+
+        Handler(Looper.getMainLooper()).postDelayed(airMonitorPoll, 0)
     }
     private fun pollMLModel() {
         viewModel.predictMLResults()
-//        val weatherPoll = object : Runnable {
-//
-//            override fun run() {
-//                //put code here
-//                viewModel.predictMLResults()
-//                Log.d("timer", "20 secs passed and Model is Polled")
-//                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
-//            }
-//        }
-//        Handler(Looper.getMainLooper()).postDelayed(weatherPoll, 0)
+        val weatherPoll = object : Runnable {
+
+            override fun run() {
+                //put code here
+                viewModel.predictMLResults()
+                Log.d("timer", "20 secs passed and Model is Polled")
+                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
+            }
+        }
+        Handler(Looper.getMainLooper()).postDelayed(weatherPoll, 0)
     }
 }
