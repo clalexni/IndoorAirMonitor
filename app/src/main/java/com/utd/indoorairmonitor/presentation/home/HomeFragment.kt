@@ -18,6 +18,7 @@ import com.utd.indoorairmonitor.R
 import com.utd.indoorairmonitor.databinding.FragmentHomeBinding
 import com.utd.indoorairmonitor.framework.IndoorAirMonitorViewModelFactory
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.delay
 
 
 class HomeFragment : Fragment() {
@@ -38,6 +39,7 @@ class HomeFragment : Fragment() {
         // get view model from provider
         viewModel = ViewModelProvider(this, IndoorAirMonitorViewModelFactory).get(HomeViewModel::class.java)
 
+        var isPollStarted = false
         // set listeners
         binding.fetchButton.setOnClickListener {
             viewModel.setDeviceName(monitorId_edit.text.toString())
@@ -46,12 +48,20 @@ class HomeFragment : Fragment() {
 
             Toast.makeText(context,"Fetching Data...", Toast.LENGTH_LONG).show()
 
-            pollWeatherData()
-            pollAirMonitorData()
+            if (isPollStarted == false) //timer to fetch if after 20 secs or something.
+                viewModel.updateWeather()
+                viewModel.updateAirMonitor()
+
+            isPollStarted = true
         }
         binding.predictButton.setOnClickListener {
+            viewModel.predictMLResults()
+            var x =viewModel.output1.value
+            Toast.makeText(context,x.toString(), Toast.LENGTH_SHORT).show()
+        }
+        if(isPollStarted){
+            pollData()
             pollMLModel()
-            Toast.makeText(context,viewModel.output1.toString(), Toast.LENGTH_SHORT).show()
         }
 
         binding.pefrInfoImage.setOnClickListener {
@@ -92,10 +102,10 @@ class HomeFragment : Fragment() {
         viewModel.humidity.observe(viewLifecycleOwner, Observer<Int> { newName ->
             hum_edit.setText(newName.toString())})
 
-
         return binding.root
     }
-    private fun pollWeatherData() {
+
+    private fun pollData() {
         //handler depreciated
         //val handler = Handler()
         //viewModel.updateWeather()
@@ -103,29 +113,17 @@ class HomeFragment : Fragment() {
             override fun run() {
                 //put code here
                 viewModel.updateWeather()
+                viewModel.updateAirMonitor()
                 Log.d("timer", "20 secs passed and AirMonitor API is Polled")
                 Handler(Looper.getMainLooper()).postDelayed(this, 20000)
             }
         }
         Handler(Looper.getMainLooper()).postDelayed(weatherPoll, 0)
     }
-    private fun pollAirMonitorData() {
-        //handler depreciated
-        //val handler = Handler()
-        //viewModel.updateAirMonitor()
-        val airMonitorPoll = object : Runnable {
-            override fun run() {
-                viewModel.updateAirMonitor()
-                Log.d("timer", "20 secs passed and AirMonitor API is Polled")
-                Handler(Looper.getMainLooper()).postDelayed(this, 20000)
-            }
-        }
 
-        Handler(Looper.getMainLooper()).postDelayed(airMonitorPoll, 0)
-    }
     private fun pollMLModel() {
         viewModel.predictMLResults()
-        val weatherPoll = object : Runnable {
+        val mlPoll = object : Runnable {
 
             override fun run() {
                 //put code here
@@ -134,6 +132,6 @@ class HomeFragment : Fragment() {
                 Handler(Looper.getMainLooper()).postDelayed(this, 20000)
             }
         }
-        Handler(Looper.getMainLooper()).postDelayed(weatherPoll, 0)
+        Handler(Looper.getMainLooper()).postDelayed(mlPoll, 1000)
     }
 }

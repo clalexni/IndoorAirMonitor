@@ -51,6 +51,7 @@ class HomeViewModel(application: Application, interactors: Interactors):
     val output2 : LiveData<Double>
         get() = _output2
 
+
     // weather related private fields getter
     val humidity : LiveData<Int>
         get() = _humidity
@@ -86,7 +87,7 @@ class HomeViewModel(application: Application, interactors: Interactors):
             withContext(Dispatchers.IO) {
                 _weather.postValue(interactors.updateWeather())
             }
-            delay(2000)
+            delay(2000) //Delays used to make sure temp & humidity update with pms
 
             _humidity.postValue(_weather.value!!.humidity)
             _temperature.postValue(_weather.value!!.temperature)
@@ -102,8 +103,8 @@ class HomeViewModel(application: Application, interactors: Interactors):
 
         interactors.predictMLResults(temp, humidity, pm2_5, pm10_0)
 
-        _output1.postValue(interactors.getMLOutput1())
-        _output2.postValue(interactors.getMLOutput2())
+        _output1.value = interactors.getMLOutput1()
+        _output2.value = interactors.getMLOutput2()
     }
 
 

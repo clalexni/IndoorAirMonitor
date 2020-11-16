@@ -35,6 +35,8 @@ class OpenWeatherAPI: WeatherDataSource {
                     val body : OpenWeatherModel = response.body()!!
                     openWeather.humidity = body.main.humidity
                     val kelvin = body.main.temp
+                    //fahreheit in iOS app
+                    //model is trained on Celsius
                     val fahrenheit = (kelvin - 273.15) * 1.8 + 32
                     val format = DecimalFormat(".###")
                     openWeather.temperature =  format.format(fahrenheit).toDouble()
