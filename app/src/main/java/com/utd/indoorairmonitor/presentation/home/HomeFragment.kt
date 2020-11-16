@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.text.SpannableStringBuilder
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,7 +18,7 @@ import com.utd.indoorairmonitor.R
 import com.utd.indoorairmonitor.databinding.FragmentHomeBinding
 import com.utd.indoorairmonitor.framework.IndoorAirMonitorViewModelFactory
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_questionaire.*
+
 
 class HomeFragment : Fragment() {
 
@@ -39,7 +38,7 @@ class HomeFragment : Fragment() {
         // get view model from provider
         viewModel = ViewModelProvider(this, IndoorAirMonitorViewModelFactory).get(HomeViewModel::class.java)
 
-        // set onClick listeners
+        // set listeners
         binding.fetchButton.setOnClickListener {
             viewModel.setDeviceName(monitorId_edit.text.toString())
             viewModel.setZipCode(zip_edit.text.toString())
@@ -50,10 +49,36 @@ class HomeFragment : Fragment() {
             pollWeatherData()
             pollAirMonitorData()
         }
-
         binding.predictButton.setOnClickListener {
             pollMLModel()
-            Toast.makeText(context,"ok...", Toast.LENGTH_LONG).show()
+            Toast.makeText(context,viewModel.output1.toString(), Toast.LENGTH_SHORT).show()
+        }
+
+        binding.pefrInfoImage.setOnClickListener {
+            val helpText = "Please enter your peak expiratory flow rate (PEFR) measurement."
+            val dialogBuilder = AlertDialog.Builder(context)
+            dialogBuilder.setMessage(helpText)
+            val alert = dialogBuilder.create()
+            alert.setTitle("Device ID Info")
+            alert.show()
+        }
+
+        binding.zipInfoImage.setOnClickListener {
+            val helpText = "Put your zip code here in order to get local weather data."
+            val dialogBuilder = AlertDialog.Builder(context)
+            dialogBuilder.setMessage(helpText)
+            val alert = dialogBuilder.create()
+            alert.setTitle("Zip Code Info")
+            alert.show()
+        }
+
+        binding.monitorIdInfoImage.setOnClickListener {
+            val helpText = "Device-ID: A unique code for every sensor the is printed on the sensor sticker or listed in the shipping confirmation email."
+            val dialogBuilder = AlertDialog.Builder(context)
+            dialogBuilder.setMessage(helpText)
+            val alert = dialogBuilder.create()
+            alert.setTitle("Zip Code Info")
+            alert.show()
         }
 
         // observe value changes for the private data field of the view model
